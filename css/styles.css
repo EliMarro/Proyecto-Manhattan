@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-* Start Bootstrap - Grayscale v6.0.3 (https://startbootstrap.com/theme/grayscale)
+* Start Botstrap - Grayscale v6.0.3 (https://startbootstrap.com/theme/grayscale)
 * Copyright 2013-2020 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
 */
@@ -81,8 +81,8 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-top:100;
+  margin-bottom:0.5rem;
 }
 
 p {
@@ -379,7 +379,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: 1.5rem;
+  font-size: 5rem;
 }
 
 h5, .h5 {
@@ -547,10 +547,11 @@ pre code {
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: 0.75rem;
+  padding-right: 1.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+ 
 }
 
 @media (min-width: 576px) {
@@ -10259,9 +10260,12 @@ body {
 
 .ElProyecto-section {
   padding: 10rem 0;
+  padding-top:0rem;
+  padding-right:5rem;
 }
 .ElProyecto-section .featured-text {
   padding: 2rem;
+  
 }
 @media (min-width: 992px) {
   .ElProyecto-section .featured-text {
