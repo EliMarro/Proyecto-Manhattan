@@ -67,7 +67,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: justify;
-  background: linear-gradient(to bottom, rgb(5, 85, 105), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(to bottom, rgb(1, 56, 42), rgba(255, 255, 255, 0.5));
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -160,7 +160,7 @@ sup {
 }
 
 a {
-  color: #64a19d;
+  color: #000000;
   text-decoration: none;
   background-color: transparent;
 }
