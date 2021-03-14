@@ -66,8 +66,8 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  text-align: left;
-  background: linear-gradient(to bottom, rgb(1, 56, 42), rgba(255, 255, 255, 0.5));
+  text-align: justify;
+  background: linear-gradient(to bottom, rgb(5, 85, 105), rgba(0, 0, 0, 0.5));
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -10208,7 +10208,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/MRI.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../assets/img/artificial-intelligence-deep-learning-neural-networks-ai-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10252,7 +10252,7 @@ body {
 
 .quienesSomos-section {
   padding-top: 10rem;
-  background-image:url("../assets/img/istockphoto-1022148242-170667a.jpg");
+  background-image:url("https://www.ciberned.es/images/stories/noticias/resonancia-magnetica.jpg");
 }
 .quienesSomos-section p {
   margin-bottom: 5rem;
