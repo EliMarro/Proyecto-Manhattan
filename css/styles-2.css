@@ -161,7 +161,7 @@ sup {
 
 a {
   color: #14064e;
-  text-decoration: underline;
+  text-decoration: none;
   background-color: transparent;
 }
 a:hover {
@@ -10190,7 +10190,7 @@ body {
   #mainNav.navbar-shrink .nav-link.active {
     color: #64a19d;
     outline: none;
-    border-bottom: 0.25rem solid #64a19d;
+    border-bottom: 0.25rem solid rgb(20, 128, 101);
   }
 }
 
