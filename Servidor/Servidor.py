@@ -23,11 +23,6 @@ def uploader():
     if request.method == "POST":
         f = request.files["Imagen"]
         print(f)
-        # if f>=1:
-        #     for files in f:
-        #         filename = secure_filename(f.filename)
-        #         files.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
         filename = secure_filename(f.filename)
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
     return "Archivo subido exitosamente"+filename
