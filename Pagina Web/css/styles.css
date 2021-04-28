@@ -10054,7 +10054,9 @@ img::-moz-selection {
   padding: 0;
   border-radius: 100%;
 }
-
+.idioma{
+  text-align: right;
+}
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
