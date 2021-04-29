@@ -18,7 +18,7 @@ def red():
 def imagenes():
     return render_template('formulario.html')
 
-@app.route("/uploader", methods = ['POST'])
+@app.route("/formulario.html", methods = ['POST'])
 def uploader():
     if request.method == "POST":
         f = request.files.getlist("imagen")
