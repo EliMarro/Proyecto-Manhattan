@@ -21,11 +21,12 @@ def imagenes():
 @app.route("/uploader", methods = ['POST'])
 def uploader():
     if request.method == "POST":
-        f = request.files["Imagen"]
-        print(f)
-        filename = secure_filename(f.filename)
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    return "Archivo subido exitosamente"+filename
+        f = request.files.getlist("imagen")
+        for i in range(len(f)):
+            x = f[i].filename
+            filename = secure_filename(x)
+            f[i].save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        return  "Archivos subidos exitosamente"
 
 
 if __name__ == '__main__':
