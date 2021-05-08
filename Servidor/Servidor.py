@@ -4,21 +4,13 @@ from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = "./ImagenesUsuarios"
+app.config['UPLOAD_FOLDER'] = r"C:\Users\Álvaro\Desktop\Proyecto-Manhattan\Servidor\ImagenesUsuarios"
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('español.html')
 
-@app.route('/CNN.html')
-def red():
-    return render_template('CNN.html')
-
-@app.route('/formulario.html')
-def imagenes():
-    return render_template('formulario.html')
-
-@app.route("/formulario.html", methods = ['POST'])
+@app.route("/", methods = ['POST'])
 def uploader():
     if request.method == "POST":
         f = request.files.getlist("imagen")

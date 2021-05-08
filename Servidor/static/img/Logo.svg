@@ -1,0 +1,12 @@
+<svg height="100%" width="100%" xmlns = "http://www.w3.org/2000/svg" viewBox="0 0 200.00 30.00">
+  <path d = "M70 25 L130 25 L130 3 L70 3 L70 25.5" stroke = "red" stroke-width = "1px" fill = "transparent"/>
+  <path d = "M130 15 L160 15" stroke = "red" stroke-width = "1px"/>
+  <path d = "M70 15 L40 15" stroke = "red" stroke-width = "1px"/>
+  <path d = "M70 15 L40 5" stroke = "red" stroke-width = "1px"/>
+  <path d = "M70 15 L40 25" stroke = "red" stroke-width = "1px"/>
+  <circle cx="163" cy="15" r="3" stroke="red" stroke-width="1px" fill="transparent" />
+  <circle cx="37" cy="4" r="3" stroke="red" stroke-width="1px" fill="transparent" />
+  <circle cx="37" cy="15" r="3" stroke="red" stroke-width="1px" fill="transparent" />
+  <circle cx="37" cy="26" r="3" stroke="red" stroke-width="1px" fill="transparent" />
+  <text x="41%" y="72%" fill="#f00" style="font-size: 25px">PM</text>
+</svg>
