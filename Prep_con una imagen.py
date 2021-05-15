@@ -19,7 +19,7 @@ sheet = meta.active
 x = sheet.max_row
 
 a=[] #lista para hacer luego numpy concatenate
-for i in range(2,12):
+for i in range(2,x+1):
     #contenido = os.listdir(sheet.cell(row=i, column= 17).value)
 
     with os.scandir("D:\\Asignaturas\\Phyton y JavaScript\\imágenes cancer\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
@@ -51,10 +51,14 @@ y2 = y.max()
 z1 = z.min()
 z2 = z.max()
 algo1= algo[z1:z2+1, x1:x2, y1:y2] #recortas el tensor 
-print(algo1.shape)      
+print(algo1.shape)
+     
+
+algo2 = np.divide(algo1,255.) #divide los valores de la matriz para que sean números entre cero y uno
 
 
-X_train, X_test = train_test_split(algo1, test_size=0.2) #para dividir las imágenes en 80% train y 20% test
+
+X_train, X_test = train_test_split(algo2, test_size=0.2) #para dividir las imágenes en 80% train y 20% test
 print(X_train.shape)
 print(X_test.shape)
 
