@@ -1,12 +1,12 @@
 <svg height="100%" width="100%" xmlns = "http://www.w3.org/2000/svg" viewBox="0 0 50.00 30.00">
-  <path d = "M15 17 L40 17 L40 7 L15 7 L15 17.5" stroke = "red" stroke-width = "1px" fill = "transparent"/>
-  <path d = "M40 12 L45 12" stroke = "red" stroke-width = "1px"/>
-  <path d = "M15 12 L5 12" stroke = "red" stroke-width = "1px"/>
-  <path d = "M15 12 L5 7" stroke = "red" stroke-width = "1px"/>
-  <path d = "M15 12 L5 17" stroke = "red" stroke-width = "1px"/>
-  <circle cx="46.2" cy="12" r="1" stroke="red" stroke-width="1px" fill="transparent" />
-  <circle cx="4" cy="12" r="1" stroke="red" stroke-width="1px" fill="transparent" />
-  <circle cx="4" cy="6.5" r="1" stroke="red" stroke-width="1px" fill="transparent" />
-  <circle cx="4" cy="17.5" r="1" stroke="red" stroke-width="1px" fill="transparent" />
-  <text x="44%" y="48%" fill="#f00" style="font-size: 8px">PM</text>
+  <path d = "M15 17 L40 17 L40 7 L15 7 L15 17.5" stroke = "#ff97d9" stroke-width = "1px" fill = "transparent"/>
+  <path d = "M40 12 L45 12" stroke = "#ff97d9" stroke-width = "1px"/>
+  <path d = "M15 12 L5 12" stroke = "#ff97d9" stroke-width = "1px"/>
+  <path d = "M15 12 L5 7" stroke = "#ff97d9" stroke-width = "1px"/>
+  <path d = "M15 12 L5 17" stroke = "#ff97d9" stroke-width = "1px"/>
+  <circle cx="46.2" cy="12" r="1" stroke="#ff97d9" stroke-width="1px" fill="transparent" />
+  <circle cx="4" cy="12" r="1" stroke="#ff97d9" stroke-width="1px" fill="transparent" />
+  <circle cx="4" cy="6.5" r="1" stroke="#ff97d9" stroke-width="1px" fill="transparent" />
+  <circle cx="4" cy="17.5" r="1" stroke="#ff97d9" stroke-width="1px" fill="transparent" />
+  <text x="44%" y="48%" fill="#ff97d9" style="font-size: 8px">PM</text>
 </svg>
