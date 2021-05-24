@@ -26,7 +26,7 @@ a=[] #lista para hacer luego numpy concatenate
 for i in range(2, 10):
     #contenido = os.listdir(sheet.cell(row=i, column= 17).value)
 
-    with os.scandir(r"E:\BCS\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
+    with os.scandir("D:\\aero\\4º\\Java y Python\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
         for fichero in ficheros: # hay varios ficheros, hago un bucle para que los vaya leyendo uno a uno, fichero va desde 0 hasta ficheros
             file_name = Path(fichero).stem # para cada fichero, me separas el nombre de la extension
             numero = file_name[2] # quiero el tercer elemento del nombre de la imagen (1-1/1-2/...) 

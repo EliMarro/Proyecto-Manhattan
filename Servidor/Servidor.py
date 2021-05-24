@@ -18,14 +18,7 @@ def uploader():
             x = f[i].filename
             filename = secure_filename(x)
             f[i].save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            return render_template("enviar.html")
-
-@app.route('/background_process_test')        
-def background_process_test():
-    
-    print("Analizando su imagen")
-    return("Nothing")
-
+        return  "Archivos subidos exitosamente"
 
 
 if __name__ == '__main__':
