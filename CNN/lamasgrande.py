@@ -27,7 +27,7 @@ a=[] #lista para meter los tamaños de las imágenes
 for i in range(2,x+1):
     #contenido = os.listdir(sheet.cell(row=i, column= 17).value)
 
-    with os.scandir("D:\\Asignaturas\\Phyton y JavaScript\\imágenes cancer\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
+    with os.scandir("D:\\aero\\4º\\Java y Python\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
         for fichero in ficheros: # hay varios ficheros, hago un bucle para que los vaya leyendo uno a uno, fichero va desde 0 hasta ficheros
             file_name = Path(fichero).stem # para cada fichero, me separas el nombre de la extension
             numero = file_name[2] # quiero el tercer elemento del nombre de la imagen (1-1/1-2/...) 
@@ -50,14 +50,14 @@ for i in range(2,x+1):
         y1 = y.min()
         y2 = y.max()
         arr1= arr[x1:x2, y1:y2] #recortas las matrices
-        #print(arr1.shape)
-        #print(arr1.size)
+        # print(arr1.shape)
+        # print(arr1.size)
         a.append(arr1.size)
 
 print(a) #lista con el tamaño de las matrices 
 max_index = a.index(max(a)) # imprime la posición de la imagen con el máximo tamaño 
 print(max_index)  # empieza a contar desde cero
-  
+print(max(a)) 
 
 
             
