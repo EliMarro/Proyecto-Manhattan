@@ -40,9 +40,6 @@ def background_process_test():
             origen = str(path + "//"+ elementos[i])
             destino = str(path2+"//"+elementos[i]) 
             shutil.move(origen,destino)
-        else:
-            print("No hay imagenes que analizar")
-
     return ("Nothing")
 
 
