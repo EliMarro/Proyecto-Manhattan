@@ -220,6 +220,8 @@
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
                 <ul class="timeline">
+                    
+                    <!-- Preprocesamiento de imágenes -->
                     <li>
                         <div class="timeline-image"><img class="img-fluid" src="assets/img/mama1.png" alt="" /></div>
                         <div class="timeline-panel">
@@ -228,13 +230,20 @@
                                 <!-- <h4 class="subheading">Our Humble Beginnings</h4> -->
                             </div>
                             <div class="timeline-body">
-                                <p style ="text-align: justify;">Se leen las imágenes desde un archivo .dcm y se convierten en matrices (archivo .npy). Algunas de ellas han tenido que girarse para que todas estuvieran del mismo lado. Una vez hecho esto, se crea un tensor de tamaño "número de pacientes x ancho x alto de la imagen".</p></p>
+                                <p style ="text-align: justify;">Se leen las imágenes desde un archivo .dcm y se convierten en matrices (archivo .npy). Una vez hecho esto, se crea un tensor de tamaño "número de pacientes x ancho x alto de la imagen".</p></p>
                                 <p class="text-center"></p>
                             </div>
                         </div>
                     </li>
+
+                    <!-- Eliminación de ruido -->
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="img-fluid" src="assets/img/mama2.png" width="70" height="100" alt="" /></div>
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Eliminacion">
+                                <img class="img-fluid" src="assets/img/mama2.png" width="70" height="100" alt="" />
+                            </a>
+                        </div>
+
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4 class = "text-center">Eliminación de ruido</h4>
@@ -245,6 +254,8 @@
                             </div>
                         </div>
                     </li>
+
+                    <!-- Acondicionamiento de la red -->
                     <li>
                         <div class="timeline-image">
                             <a class="portfolio-link" data-toggle="modal" href="#Acondicionamiento">
@@ -253,7 +264,13 @@
                                 </div> -->
                                 <img class="img-fluid" src="assets/img/acondicionamiento.png" alt="" />
                             </a>
-                            
+                            <br></br>
+                            <a class="portfolio-link" data-toggle="modal" href="#ImagenGrande">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="img-fluid" src="assets/img/acondicionamiento.png" alt="" />
+                            </a>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -264,6 +281,8 @@
                                 <p style ="text-align: justify;">Con las imágenes procesadas y recortadas, se han añadido capas para tener una densidad inicial similar a 512 x 512 (tamaño de las imágenes utilizadas para entrenar la red original) y poder aplicar con éxito las capas ya diseñadas.</p></div>
                         </div>
                     </li>
+
+                    <!-- Entrenamiento de la red -->
                     <li class="timeline-inverted">
                         <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" /></div>
                         <div class="timeline-panel">
@@ -274,7 +293,7 @@
                                 <p style ="text-align: justify;">Con la red ya reacondicionada al dataset escogido, se le aplican una serie de capas cuyo objetivo es el filtrado de datos.</p></div>
                         </div>
                     </li>
-                    <li class="timeline-inverted">
+                    <!-- <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
                                 Be Part
@@ -284,7 +303,7 @@
                                 Story!
                             </h4>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </section>
@@ -524,6 +543,30 @@
             </div>
         </div>
 
+        <!-- Elimnacion de ruido -->
+        <div class="portfolio-modal modal fade" id="Eliminacion" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" width = "200" height = "300" src="assets/img/mama2.png" alt="" />
+                                    <p style = "text-align: justify;">Una vez se tiene el tensor creado, se busca aquella imagen que contiene la mama más grande.
+                                        Para ello, se analizan las imágenes en busca de las zonas con píxeles distintos de cero (que no sean de color negro), es decir, busca las zonas donde solo hay mama. 
+                                        Una vez hecho eso, se le pide que analice el tensor en busca de los valores máximos y mínimos de X e Y dentro de los que están los píxeles que representan el pecho. Esos valores de X e Y marcarán el tamaño del tensor.
+                                        De esta manera se elimina parte de la zona oscura de las imágenes, que para el entrenamiento de la red solo representa un obstáculo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Acondicionamiento de la red-->
         <div class="portfolio-modal modal fade" id="Acondicionamiento" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -535,11 +578,28 @@
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
-                                    <p style = "text-align: justify;">El dataset escogido estaba diseñado para entrenar con imágenes de tamaño 512 x 512, por lo que inicialmente se aplicaron una serie de capas que redujeran la densidad de nuestras imágenes a un valor similar a ese, 
-                                        y poder aplicar las capas ya diseñadas. 
+                                    <p style = "text-align: justify;">Como el dataset escogido estaba diseñado para entrenar con imágenes de tamaño 512 x 512, inicialmente se aplicaron una serie de capas que redujeran la densidad de nuestras imágenes a un valor similar a ese, 
+                                        y poder así aplicar las capas ya diseñadas. 
                                     </p>
-                                    <p style = "text-align: justify;">Debido a la falta de un equipo adecuado, hubo que reducir el tamaño del dataset y no se utilizaron todas las imágenes. Sin embargo, se buscó la imagen que, una vez recortada, fuera la más grande,
-                                        para que el tensor recortado tuviera un tamaño  de imágenes constante (y no dependiera de las imágenes con las que se creaba) y poder que parámetros aplicar a las capas. 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="ImagenGrande" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
+                                    <p style = "text-align: justify;">Debido a la falta de un equipo acondicionado a las exigencias del proyecto, no fue posible la utilización completa de todas las imágenes del dataset. Pero el tensor que se crea se recorta en función de la imagen con el pecho más grande.
+                                        Esta imagen se buscó para que fuera incluida en todo momento y que el tamaño del tensor fuera constante. Así sabríamos que parámetros ponder en la red a la hora de buscar el 512 x 512.
                                     </p>
                                 </div>
                             </div>
