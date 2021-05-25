@@ -2,9 +2,11 @@ import os
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
-
+import shutil
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = r"C:\Users\Álvaro\Desktop\Proyecto-Manhattan\Servidor\ImagenesUsuarios"
+path = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor//ImagenesUsuarios"
+path2 = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor//ImagenesANALizadas"
+app.config['UPLOAD_FOLDER'] = path
 
 @app.route('/')
 def home():
@@ -18,13 +20,30 @@ def uploader():
             x = f[i].filename
             filename = secure_filename(x)
             f[i].save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            return render_template("enviar.html")
+    return render_template("enviar.html")
 
 @app.route('/background_process_test')        
 def background_process_test():
-    
-    print("Analizando su imagen")
-    return("Nothing")
+    elementos =  os.listdir(path)
+    for i in range(len(elementos)):
+        if len(elementos) != 0 :
+            print("Hay imagenes que analizar")
+            #Aqui iria la parte de activar el modelo
+            print("LA IMAGEN"+elementos[i]+"SE VAN A ANALIZAR")
+            #Se activa el modelo y se analiza
+
+
+
+
+
+            #Codigo para cambiar las imagenes de carpeta
+            origen = str(path + "//"+ elementos[i])
+            destino = str(path2+"//"+elementos[i]) 
+            shutil.move(origen,destino)
+        else:
+            print("No hay imagenes que analizar")
+
+    return ("Nothing")
 
 
 if __name__ == '__main__':
