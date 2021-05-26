@@ -84,8 +84,8 @@
                         Este proceso de división descontrolada puede comenzar de manera localizada y después diseminarse a otros tejidos circundantes o incluso expandirse a otros órganos del cuerpo en un proceso que se conoce como metástasis.</p>
                     <p style ="text-align: justify;">Los cánceres más comunes son: de piel, de pulmón, de mama y colorrectal. En concreto, nosotros hemos decidido trabajar con el cáncer de mama porque</p>
                         <h3 class="section-heading">Etapas del cáncer de mama</h3>
-                    <p >El sistema de estadificación TNM para el cáncer de mama se basa en el tamaño del tumor primario (T), si éste se ha diseminado a los ganglios linfáticos (N), en las axilas o aún no se ha diseminado, y si el tumor se ha metastatizado (M) (es decir, si se ha propagado a una región más distante del cuerpo). Los tumores de mayor tamaño, de propagación nodal y metastásicos tienen un mayor número de estadiaje y un peor pronóstico.</p>
-                    <h3 class = "section-subheading">Se pueden distinguir cinco etapas:</h3>
+                    <p style ="text-align: justify;">La elección del mejor tratamiento dependerá del estadio en el que se encuentre el cáncer. Este puede ser determinado en función del tamaño del tumor, su naturaleza invasiva, y el grado de diseminación a nodos linfáticos u otras partes del cuerpo.</p>
+                    <p style ="text-align: justify;">Se pueden distinguir cinco etapas:</p>
                     <div class="col-md-12">
                         <div class = "row">
                             <div class="col-lg-8">
@@ -223,7 +223,11 @@
                     
                     <!-- Preprocesamiento de imágenes -->
                     <li>
-                        <div class="timeline-image"><img class="img-fluid" src="assets/img/mama1.png" alt="" /></div>
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Preprocesamiento">
+                                <img class="img-fluid" src="assets/img/mama1.png" alt="" />
+                            </a>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4 class = "text-center">Preprocesamiento de imágenes</h4>
@@ -389,6 +393,9 @@
                             <h3 class = "text-justify">En el front end:</h3>
                                 <ul>
                                     <li>
+                                        <p class = "text-justify">Elección de la librería para el desarrollo del servidor.</p>
+                                    </li>
+                                    <li>
                                         <p class = "text-justify">Conexión entre cliente y servidor.</p>
                                     </li>
                                     <li>
@@ -543,6 +550,29 @@
             </div>
         </div>
 
+        <!-- Preprocesamiento -->
+        <div class="portfolio-modal modal fade" id="Preprocesamiento" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/preprocesamiento.png" alt="" />
+                                    <p style = "text-align: justify;">En el data-set venía incluido un excel donde se especifica la ruta de la imagen hasta la carpeta donde se encuentra. Para leer las imágenes, se va leyendo la columna del excel donde viene dicha ruta,
+                                        y se le pide que coja una sola imagen (cada paciente tiene 2 o 4 imágenes, pero solo necesitamos 1). Esa imagen es analizada para ver de que lado está la mama, y rotarla si el pecho se encuentra a la izquierda. De esta manera,
+                                        todas las imágenes tendrán la imagen del pecho en el mismo lado, y será más fácil manipularlas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Elimnacion de ruido -->
         <div class="portfolio-modal modal fade" id="Eliminacion" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
@@ -553,7 +583,7 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" width = "200" height = "300" src="assets/img/mama2.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/eliminarRuido.png" alt="" />
                                     <p style = "text-align: justify;">Una vez se tiene el tensor creado, se busca aquella imagen que contiene la mama más grande.
                                         Para ello, se analizan las imágenes en busca de las zonas con píxeles distintos de cero (que no sean de color negro), es decir, busca las zonas donde solo hay mama. 
                                         Una vez hecho eso, se le pide que analice el tensor en busca de los valores máximos y mínimos de X e Y dentro de los que están los píxeles que representan el pecho. Esos valores de X e Y marcarán el tamaño del tensor.
@@ -599,7 +629,7 @@
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
                                     <p style = "text-align: justify;">Debido a la falta de un equipo acondicionado a las exigencias del proyecto, no fue posible la utilización completa de todas las imágenes del dataset. Pero el tensor que se crea se recorta en función de la imagen con el pecho más grande.
-                                        Esta imagen se buscó para que fuera incluida en todo momento y que el tamaño del tensor fuera constante. Así sabríamos que parámetros ponder en la red a la hora de buscar el 512 x 512.
+                                        Esta imagen se buscó para que fuera incluida en todo momento y que el tamaño del tensor fuera constante. Así sabríamos que parámetros poner en la red a la hora de buscar el 512 x 512.
                                     </p>
                                 </div>
                             </div>
