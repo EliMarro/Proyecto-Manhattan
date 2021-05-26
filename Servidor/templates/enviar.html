@@ -18,9 +18,18 @@
             });
     </script>
     <script>
+        accuaracy = "{{accuaracy}}"
         function greets(){
-            alert("Su imagen esta siendo analizada, por favor espere");
+            alert("Su imagen esta siendo analizada, por favor espere.");
             }
+        function doctor(){
+            if (accuaracy>0.6){
+                alert("Por favor acuda al medico. Usted tiene una posibilidad del {{accuaracy}} de sufrir cancer")
+            }else{
+                alert("No parece recomendable ir al medico")
+            }
+
+        }
     </script>
 </head>
 <body>
@@ -28,5 +37,10 @@
     <form>
         <a href=# id=Prueba><button onclick = greets() class='btn btn-default'>ANALizar</button></a>
     </form>
+
+    <form>
+        <a href=# id=Prueba><button onclick = doctor() class='btn btn-default'>Resulta2</button></a>
+    </form>
+    <h1></h1>
 </body>
 </html>
