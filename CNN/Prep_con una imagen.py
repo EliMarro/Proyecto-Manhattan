@@ -23,7 +23,7 @@ sheet = meta.active
 x = sheet.max_row
 
 a=[] #lista para hacer luego numpy concatenate
-for i in range(2, 10):
+for i in range(2, x+1):
     #contenido = os.listdir(sheet.cell(row=i, column= 17).value)
 
     with os.scandir("D:\\aero\\4º\\Java y Python\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
@@ -100,7 +100,7 @@ encoder = encoder.fit_transform(cancer.iloc[:,5].values)
 print(encoder)
 #print(cancer.shape)
 
-n = 8
+n = 100
 N = int(n*0.8)
 arr = np.array(encoder)
 print(arr.shape)
