@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Documento</title>
+    <link rel="icon" type="image/x-ico" href="assets/img/Logi.svg"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+            $(function() {
+              $('a#Prueba').bind('click', function() {
+                $.getJSON('/background_process_test',
+                    function(data) {
+                //do nothing
+                });
+                return false;
+              });
+            });
+    </script>
+    <script>
+        accuaracy = "{{accuaracy}}"
+        function greets(){
+            alert("Su imagen está siendo analizada, por favor espere.");
+            }
+        function doctor(){
+            if (accuaracy>0.6){
+                alert("Por favor acuda al medico. Usted tiene una posibilidad del {{accuaracy}} de sufrir cancer")
+            }else{
+                alert("No parece recomendable ir al medico")
+            }
+
+        }
+    </script>
+   <!-- Core theme CSS (includes Bootstrap)-->
+   <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class = "container2">
+        <div class="text-center">
+            <h7 aling = "center">Si desea analizar su imagen pulse en el siguiente botón</h7>
+            <br></br>
+            <form>
+                <a href=# id=Prueba><button onclick = greets() class="btn btn-outline-primary btn-lg">Analizar</button></a>
+            </form>
+            <br></br>
+            <h7 aling = "center">Si desea conocer nuestra recomendación pulse en el siguiente botón</h7>
+            <br></br>
+            <form>
+                <a href=# id=Prueba><button onclick = doctor() class="btn btn-outline-primary btn-lg">Resultados</button></a>
+            </form>
+            <h1></h1>
+        </div>
+    </div>
+</body>
+</html>

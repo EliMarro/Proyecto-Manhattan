@@ -390,6 +390,11 @@ h6, .h6 {
   font-size: 1rem;
 }
 
+h7, .h7 {
+  font-size: 2rem;
+  color:rgb(92, 83, 90)
+}
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
@@ -551,6 +556,13 @@ pre code {
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+}
+.container2 {
+  display: table-cell;
+  width: calc(100vw - 10px);
+  height: calc(100vh - 10px);
+  vertical-align: middle;
+
 }
 .caja { 
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
@@ -2701,13 +2713,16 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-  color: #ff97d9;
+  color: #ffffff;
   border-color: #ff97d9;
+  background-color: #7b7e80;
+  border-style: double;
 }
+
 .btn-outline-primary:hover {
-  color: #fff;
-  background-color: #fed136;
-  border-color: #fed136;
+  color: #55434e;
+  background-color: #ff97d9;
+  border-color: #ff97d9;
 }
 .btn-outline-primary:focus, .btn-outline-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 54, 0.5);
