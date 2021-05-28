@@ -43,7 +43,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#conceptoderedes">Usos de redes neuronales</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#red">Funcionamiento de la red</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Imagenes">Añada su imagen</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Dificultades">Dificultades</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Aprendizaje">Aprendizaje</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#equipo">Equipo</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -88,7 +88,7 @@
                     <p style ="text-align: justify;">Se pueden distinguir cinco etapas:</p>
                     <div class="col-md-12">
                         <div class = "row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="team-member">
                                     <h3 class="section-heading">Estadio 0</h3>
                                     <p style ="text-align: justify;">Afección por la que se encuentran células anormales en el revestimiento de un conducto de la mama. Estas células anormales no se diseminaron fuera del conducto a otros tejidos de la mama.</p>
@@ -99,7 +99,7 @@
                         <br></br>
 
                         <div class = "row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="team-member">
                                     <img class="mx-auto rounded-circle" id = "imagen2" src="assets/img/T1.svg.png" alt="" />
                                     <h3 class="section-heading">Estadio 1</h3>
@@ -111,7 +111,7 @@
                         <br></br>
 
                         <div class = "row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="team-member">
                                     <img class="mx-auto rounded-circle" id = "imagen1" src="assets/img/T2.svg.png" alt="" />
                                     <h3 class="section-heading">Estadio 2</h3>
@@ -123,7 +123,7 @@
                         <br></br>
 
                         <div class = "row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="team-member">
                                     <img class="mx-auto rounded-circle" id = "imagen2" src="assets/img/T3.svg.png" alt="" />
                                     <h3 class="section-heading">Estadio 3</h3>
@@ -135,7 +135,7 @@
                         <br></br>
 
                         <div class = "row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-12">
                                 <div class="team-member">
                                     <img class="mx-auto rounded-circle" id = "imagen1" src="assets/img/T4.jpg" alt="" />
                                     <h3 class="section-heading">Estadio 4</h3>
@@ -282,7 +282,7 @@
                                 <!-- <h4 class="subheading">Transition to Full Service</h4> -->
                             </div>
                             <div class="timeline-body">
-                                <p style ="text-align: justify;">Con las imágenes procesadas y recortadas, se han añadido capas para tener una densidad inicial similar a 512 x 512 (tamaño de las imágenes utilizadas para entrenar la red original) y poder aplicar con éxito las capas ya diseñadas.</p></div>
+                                <p style ="text-align: justify;">Con las imágenes procesadas y recortadas, se ha acondicionado el data set para tener una densidad inicial similar a 512 x 512 (tamaño de las imágenes utilizadas para entrenar la red original) y poder aplicar con éxito las capas ya diseñadas.</p></div>
                         </div>
                     </li>
 
@@ -364,8 +364,81 @@
             </div>
         </section>
 
-        <!--Dificulties-->
-        <section class="page-section bg-light" id="Dificultades">
+        <!--Aprendizaje-->
+        <section class="page-section bg-light" id="Aprendizaje">
+            <div class="container">
+                <h2 class="text-center">¿Qué hemos aprendido?</h2>
+                <div class="caja">
+                    <ul>
+                        <li>
+                            <h3 class = "text-justify">En el back end:</h3>
+                                <ul>
+                                    <li>
+                                        <p class = "text-justify">Lectura de archivos:</p>
+                                    </li>
+                                        <ul>
+                                            <li>
+                                                <p class = "text-justify">Ser capaces de leer archivos excel, acceder a columnas/ filas concretas y, a través de él poder acceder a las imágenes.</p>
+                                            </li>
+                                            <li>
+                                                <p class = "text-justify">Ser capaces de leer archivos .csv, acceder a columans/ filas concretas y transformar en 0 y 1 columnas que presentan únicamente dos parámetros (benigno-maligno).</p>
+                                            </li>
+                                        </ul>
+                                    
+                                    <li>
+                                        <p class = "text-justify">Módulo de numpy:</p>
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <p class = "text-justify"></p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify"></p>
+                                        </li>
+                                    </ul>
+                                    <li>
+                                        <p class = "text-justify">Tratamiento de un dataset de imágenes:</p>
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <p class = "text-justify">Conversión de imágenes a matrices de números.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Rotar imágenes.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Concatenar varias matrices en un tensor.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Recortar tensores para quedarnos solo con la parte de la imagen que nos interesa.</p>
+                                        </li>
+                                    </ul>
+                                </ul>
+                        </li>
+                        <li>
+                            <h3 class = "text-justify">En el front end:</h3>
+                                <ul>
+                                    <li>
+                                        <p class = "text-justify">Modificar un template usando .html y .css.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Crear un servidor.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Conexión entre cliente y servidor.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Apertura de puertos wifi.</p>
+                                    </li>
+                                </ul> 
+                        </li>
+                      </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="page-section bg-light" id="Aprendizaje">
             <div class="container">
                 <h2 class="text-center">Dificultades encontradas durante el desarrollo del proyecto</h2>
                 <div class="caja">
@@ -608,8 +681,7 @@
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
-                                    <p style = "text-align: justify;">Como el dataset escogido estaba diseñado para entrenar con imágenes de tamaño 512 x 512, inicialmente se aplicaron una serie de capas que redujeran la densidad de nuestras imágenes a un valor similar a ese, 
-                                        y poder así aplicar las capas ya diseñadas. 
+                                    <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
                                     </p>
                                 </div>
                             </div>
@@ -628,8 +700,7 @@
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
-                                    <p style = "text-align: justify;">Debido a la falta de un equipo acondicionado a las exigencias del proyecto, no fue posible la utilización completa de todas las imágenes del dataset. Pero el tensor que se crea se recorta en función de la imagen con el pecho más grande.
-                                        Esta imagen se buscó para que fuera incluida en todo momento y que el tamaño del tensor fuera constante. Así sabríamos que parámetros poner en la red a la hora de buscar el 512 x 512.
+                                    <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
                                     </p>
                                 </div>
                             </div>
