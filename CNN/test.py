@@ -171,16 +171,17 @@ def softmaxToProbs(soft):
 
 
 
-def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData=True):
+def predictImage(img_path=get_testdata_file("1-3.dcm"), arrayImg=None, printData=True):
     a = []
     if arrayImg == None:
-        img_path= r"1-1.dcm"
-        ds= dcmread(img_path)
-        arr= ds.pixel_array
+        ruta = "1-1.dcm"
+        img_grande = dcmread(ruta)
+        arr = img_grande.pixel_array
         if np.all(arr[:,1913]==0):
             arr = arr[::-1,::-1]
+
         else:
-            arr = ds.pixel_array
+            arr = img_grande.pixel_array
         
         x,y =np.nonzero(arr)
         x1 = x.min()
@@ -188,7 +189,20 @@ def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData
         y1 = y.min()
         y2 = y.max()
         arr1= arr[x1:x2, y1:y2]
-        a.append(arr1)
+        row, columns = arr1.shape[0], arr1.shape[1]
+        
+
+        img_path= r"1-3.dcm"
+        ds= dcmread(img_path)
+        arr2= ds.pixel_array
+        if np.all(arr2[:,1913]==0):
+            arr2 = arr2[::-1,::-1]
+        else:
+            arr2 = ds.pixel_array
+        
+        
+        arr3= arr2[0:row, 0:columns]
+        a.append(arr3)
 
     #Image.fromarray(arr1[0]).show()
 
@@ -210,7 +224,7 @@ def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData
 
         for j in range(len(classes)):
             if printData:
-                print(str(classes[j]) + " : " + str(round(probs[j], 2)) + "%")
+                print(str(classes[j]) + " : " + str(probs[j]) + "%")
             compProbs[j] += probs[j]
 
     if printData:
@@ -218,7 +232,7 @@ def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData
 
     for j in range(len(classes)):
         if printData:
-            print(str(classes[j]) + " : " + str(round(compProbs[j], 2)) + "%")
+            print(str(classes[j]) + " : " + str(compProbs[j]) + "%")
 
 
 print("1. Do you want to train the network\n"
