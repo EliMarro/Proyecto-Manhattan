@@ -171,38 +171,24 @@ def softmaxToProbs(soft):
 
 
 
-def predictImage(img_path=get_testdata_file("1-3.dcm"), arrayImg=None, printData=True):
+def predictImage(img_path=get_testdata_file("1-2.dcm"), arrayImg=None, printData=True):
     a = []
     if arrayImg == None:
-        ruta = "1-1.dcm"
-        img_grande = dcmread(ruta)
-        arr = img_grande.pixel_array
+        train = np.load('X_train.npy')
+        row, columns = train.shape[1], train.shape[2]
+        
+
+        img_path= r"1-2.dcm"
+        ds= dcmread(img_path)
+        arr= ds.pixel_array
         if np.all(arr[:,1913]==0):
             arr = arr[::-1,::-1]
-
         else:
-            arr = img_grande.pixel_array
-        
-        x,y =np.nonzero(arr)
-        x1 = x.min()
-        x2 = x.max()
-        y1 = y.min()
-        y2 = y.max()
-        arr1= arr[x1:x2, y1:y2]
-        row, columns = arr1.shape[0], arr1.shape[1]
-        
-
-        img_path= r"1-3.dcm"
-        ds= dcmread(img_path)
-        arr2= ds.pixel_array
-        if np.all(arr2[:,1913]==0):
-            arr2 = arr2[::-1,::-1]
-        else:
-            arr2 = ds.pixel_array
+            arr = ds.pixel_array
         
         
-        arr3= arr2[0:row, 0:columns]
-        a.append(arr3)
+        arr1= arr[0:row, 0:columns]
+        a.append(arr1)
 
     #Image.fromarray(arr1[0]).show()
 
@@ -235,31 +221,37 @@ def predictImage(img_path=get_testdata_file("1-3.dcm"), arrayImg=None, printData
             print(str(classes[j]) + " : " + str(compProbs[j]) + "%")
 
 
+
 print("1. Do you want to train the network\n"
       "2. Test the model\n(Enter 1 or 2)?\n")
 ch = int(input())
 if ch == 1:
+    classes = np.load('classes.npy')
+    print("Loading")
+    X_train = np.load('X_train.npy')
+    X_train = tf.expand_dims(X_train, axis=-1)
+    print(X_train.shape)
+    Y_train = np.load('Y_train.npy')
+    Y_train = tf.keras.utils.to_categorical(Y_train, 2)
+    X_test = np.load('X_test.npy')
+    X_test = tf.expand_dims(X_test, axis=-1)
+    Y_test_orig = np.load('Y_test_orig.npy')
+    Y_test_orig = tf.keras.utils.to_categorical(Y_test_orig, 2)
+    print(X_train.shape)
 
- classes = np.load('classes.npy')
- print("Loading")
- X_train = np.load('X_train.npy')
- X_train = tf.expand_dims(X_train, axis=-1)
- print(X_train.shape)
- Y_train = np.load('Y_train.npy')
- Y_train = tf.keras.utils.to_categorical(Y_train, 2)
- X_test = np.load('X_test.npy')
- X_test = tf.expand_dims(X_test, axis=-1)
- Y_test_orig = np.load('Y_test_orig.npy')
- Y_test_orig = tf.keras.utils.to_categorical(Y_test_orig, 2)
- print(X_train.shape)
+    print("number of training examples = " + str(X_train.shape[0]))
+    print("number of test examples = " + str(X_test.shape[0]))
+    print("X_train shape: " + str(X_train.shape))
+    print("Y_train shape: " + str(Y_train.shape))
+    print("X_test shape: " + str(X_test.shape))
+    print("Y_test shape: " + str(Y_test_orig.shape))
+    model = train(batch_size=batchSize, epochs=numOfEpoches)
 
- print("number of training examples = " + str(X_train.shape[0]))
- print("number of test examples = " + str(X_test.shape[0]))
- print("X_train shape: " + str(X_train.shape))
- print("Y_train shape: " + str(Y_train.shape))
- print("X_test shape: " + str(X_test.shape))
- print("Y_test shape: " + str(Y_test_orig.shape))
- model = train(batch_size=batchSize, epochs=numOfEpoches)
-
-elif ch == 2:
+else:
     predictImage()
+    
+
+
+
+
+
