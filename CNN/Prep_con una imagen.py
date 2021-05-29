@@ -14,7 +14,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn import datasets, metrics
 from sklearn.preprocessing import LabelEncoder
-
+from itertools import chain
 
 
 filePath= "Metadatos.xlsx"
@@ -22,8 +22,10 @@ meta = load_workbook(filePath)
 sheet = meta.active
 x = sheet.max_row
 
+new_range = chain(range(2,11), range(460, 461)) #para meter la imagen más grande dataset
+
 a=[] #lista para hacer luego numpy concatenate
-for i in range(2, 10):
+for i in new_range:
     #contenido = os.listdir(sheet.cell(row=i, column= 17).value)
 
     with os.scandir("D:\\Asignaturas\\Phyton y JavaScript\\imágenes cancer\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
@@ -48,11 +50,13 @@ for i in range(2, 10):
 algo = np.concatenate(([a]), axis=1) #concatena las matrices para formar un tensor 
 print(algo.shape) #hay x matrices, y cada una tiene 2294 filas y 1914 columnas 
 z,x,y =np.nonzero(algo)
+x1 = x.min()
+x2 = x.max()
 y1 = y.min()
 y2 = y.max()
 z1 = z.min()
 z2 = z.max()
-algo1= algo[z1:z2+1, :, y1:y2] #recortas el tensor 
+algo1= algo[z1:z2+1, x1:x2, y1:y2] #recortas el tensor 
 print(algo1.shape)
      
 
