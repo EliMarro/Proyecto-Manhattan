@@ -23,10 +23,10 @@ sheet = meta.active
 x = sheet.max_row
 
 a=[] #lista para hacer luego numpy concatenate
-for i in range(2, x+1):
+for i in range(2, 10):
     #contenido = os.listdir(sheet.cell(row=i, column= 17).value)
 
-    with os.scandir("D:\\aero\\4º\\Java y Python\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
+    with os.scandir("D:\\Asignaturas\\Phyton y JavaScript\\imágenes cancer\\manifest-1616439774456" + sheet.cell(row=i, column= 17).value) as ficheros: # me voy a la carpeta que me marca el excel y escaneo los elementos que hay en la carpeta y los llamo "ficheros"
         for fichero in ficheros: # hay varios ficheros, hago un bucle para que los vaya leyendo uno a uno, fichero va desde 0 hasta ficheros
             file_name = Path(fichero).stem # para cada fichero, me separas el nombre de la extension
             numero = file_name[2] # quiero el tercer elemento del nombre de la imagen (1-1/1-2/...) 
@@ -48,13 +48,11 @@ for i in range(2, x+1):
 algo = np.concatenate(([a]), axis=1) #concatena las matrices para formar un tensor 
 print(algo.shape) #hay x matrices, y cada una tiene 2294 filas y 1914 columnas 
 z,x,y =np.nonzero(algo)
-x1 = x.min()
-x2 = x.max()
 y1 = y.min()
 y2 = y.max()
 z1 = z.min()
 z2 = z.max()
-algo1= algo[z1:z2+1, x1:x2, y1:y2] #recortas el tensor 
+algo1= algo[z1:z2+1, :, y1:y2] #recortas el tensor 
 print(algo1.shape)
      
 
@@ -119,5 +117,3 @@ print(Y_train.shape)
 # para comprobar que lo guarda bien
             
             
-
-
