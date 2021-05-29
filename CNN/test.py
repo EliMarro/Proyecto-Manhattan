@@ -171,14 +171,14 @@ def softmaxToProbs(soft):
 
 
 
-def predictImage(img_path=get_testdata_file("1-2.dcm"), arrayImg=None, printData=True):
+def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData=True):
     a = []
     if arrayImg == None:
         train = np.load('X_train.npy')
         row, columns = train.shape[1], train.shape[2]
         
 
-        img_path= r"1-2.dcm"
+        img_path= r"1-1.dcm"
         ds= dcmread(img_path)
         arr= ds.pixel_array
         if np.all(arr[:,1913]==0):
