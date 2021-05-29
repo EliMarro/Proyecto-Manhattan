@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, request
+from tensorflow import python
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 import shutil
@@ -17,18 +18,26 @@ def home():
 def uploader():
     #Esto se prepara para hacer cosas NAZIS que solo Diana comprende(Referencia clara a su pasado nacional socialista)
     #Se activa el modelo y se analiza
-    resultado = random.random()
-    accuaracy = resultado
     if request.method == "POST":
         f = request.files.getlist("imagen")
         for i in range(len(f)):
             x = f[i].filename
-            filename = secure_filename(x)
+            y = str(x)
+            filename = secure_filename(y)
+            origen = str(path+"//"+y)
+            destino = str(path+"//"+"1-2.dcm")
+            print(origen)
+            print(destino)
             f[i].save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-    return render_template("enviar.html", accuaracy = resultado)
+            os.rename(origen,destino)
+
+    return render_template("enviar.html")
 
 @app.route('/background_process_test')        
 def background_process_test():
+    resultado = random.random()
+    accuaracy = resultado
+    print(accuaracy)
     elementos =  os.listdir(path)
     for i in range(len(elementos)):
         if len(elementos) != 0 :
@@ -39,7 +48,8 @@ def background_process_test():
             origen = str(path + "//"+ elementos[i])
             destino = str(path2+"//"+elementos[i]) 
             shutil.move(origen,destino)
-    return ("Nothing")
+    # os.system("python test.py")
+    return render_template("enviar.html", accuaracy = resultado)
 
 
 if __name__ == '__main__':
