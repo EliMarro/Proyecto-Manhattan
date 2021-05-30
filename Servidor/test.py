@@ -169,39 +169,26 @@ def softmaxToProbs(soft):
     sum_z_exp = sum(z_exp)
     return [(i / sum_z_exp) * 100 for i in z_exp]
 
-imgList = os.listdir(r"C:\Users\Álvaro\Desktop\Proyecto-Manhattan\Servidor\ImagenesANALizadas")
-def predictImage(img_path=get_testdata_file(imgList[0]), arrayImg=None, printData=True):
+
+
+def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData=True):
     a = []
     if arrayImg == None:
-        ruta = "1-1.dcm"
-        img_grande = dcmread(ruta)
-        arr = img_grande.pixel_array
+        train = np.load('X_train.npy')
+        row, columns = train.shape[1], train.shape[2]
+        
+
+        img_path= "1-1.dcm"
+        ds= dcmread(img_path)
+        arr= ds.pixel_array
         if np.all(arr[:,1913]==0):
             arr = arr[::-1,::-1]
-
         else:
-            arr = img_grande.pixel_array
-        
-        x,y =np.nonzero(arr)
-        x1 = x.min()
-        x2 = x.max()
-        y1 = y.min()
-        y2 = y.max()
-        arr1= arr[x1:x2, y1:y2]
-        row, columns = arr1.shape[0], arr1.shape[1]
-        
-
-        img_path= imgList[0]
-        ds= dcmread(img_path)
-        arr2= ds.pixel_array
-        if np.all(arr2[:,1913]==0):
-            arr2 = arr2[::-1,::-1]
-        else:
-            arr2 = ds.pixel_array
+            arr = ds.pixel_array
         
         
-        arr3= arr2[0:row, 0:columns]
-        a.append(arr3)
+        arr1= arr[0:row, 0:columns]
+        a.append(arr1)
 
     #Image.fromarray(arr1[0]).show()
 
@@ -216,23 +203,18 @@ def predictImage(img_path=get_testdata_file(imgList[0]), arrayImg=None, printDat
     
 
     for i in range(len(a)):
-        if printData:
-            print("\n\nCrop " + str(i + 1) + " prediction:\n")
-
         ___, probs = predict(a[i], './modelo', showImg=False)
 
         for j in range(len(classes)):
             if printData:
-                print(str(classes[j]) + " : " + str(probs[j]) + "%")
+                print(str(classes[j]) + " : " + str(round(probs[j], 2)) + "%")
             compProbs[j] += probs[j]
-
-    if printData:
-        print("\n\nAverage from all crops\n")
-
-    for j in range(len(classes)):
-        if printData:
-            print(str(classes[j]) + " : " + str(compProbs[j]) + "%")
-
-
+    return compProbs
 
 predictImage()
+    
+
+
+
+
+

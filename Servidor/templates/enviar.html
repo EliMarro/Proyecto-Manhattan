@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Documento</title>
-    <link rel="icon" type="image/x-ico" href="assets/img/Logi.svg"/>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-ico" href="{{url_for('static', filename='img/Logi.svg')}}"/>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type=text/javascript>
             $(function() {
               $('a#Prueba').bind('click', function() {
@@ -31,26 +31,22 @@
             }
 
         }
-    </script>
+    </script> -->
    <!-- Core theme CSS (includes Bootstrap)-->
-   <link href="css/styles.css" rel="stylesheet" />
+   <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
 </head>
 <body>
     <div class = "container2">
         <div class="text-center">
-            <h7 aling = "center">Si desea analizar su imagen pulse en el siguiente botón</h7>
+            <h7 aling = "center">La probabilidad de que usted tenga un tumor benigno es del {{B}} %</h7>
             <br></br>
-            <form>
-                <a href=# id=Prueba><button onclick = greets() class="btn btn-outline-primary btn-lg">Analizar</button></a>
-            </form>
             <br></br>
-            <h7 aling = "center">Si desea conocer nuestra recomendación pulse en el siguiente botón</h7>
             <br></br>
-            <form>
-                <a href=# id=Prueba><button onclick = doctor() class="btn btn-outline-primary btn-lg">Resultados</button></a>
-            </form>
-            <h1></h1>
+            <h7 aling = "center">La probabilidad de que usted tenga un tumor maligno es del {{M}} %</h7>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">La empresa Proyecto Manhattan no se hace responsable de las decisiones que usted tome. Recomendamos que si la probabilidad de que sea maligno supera el 50 % acuda a un especialista</p></div>
     </div>
 </body>
 </html>

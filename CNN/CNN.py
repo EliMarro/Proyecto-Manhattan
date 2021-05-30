@@ -131,7 +131,7 @@ from tensorflow.keras.models import Sequential
 # modelSavePath = 'my_model3.h5'
 # numOfTestPoints = 2
 batchSize = 16
-numOfEpoches = 3
+numOfEpoches = 16
 #######################################################################################################################
 
 # defino funciones
@@ -148,13 +148,13 @@ def defModel(input_shape):
 
     X = MaxPooling2D((6, 1), strides=4)(X)  # MP Layer(2)
 
-    X = Conv2D(16, (3, 3), strides=(1, 1))(X_input)  # 'Conv.Layer(1)'
+    X = Conv2D(16, (7, 7), strides=(2, 2))(X_input)  # 'Conv.Layer(1)'
 
     X = Activation('relu')(X)
 
-    X = MaxPooling2D((3, 3), strides=3)(X)  # MP Layer(2)
+    X = MaxPooling2D((3, 3), strides=4)(X)  # MP Layer(2)
 
-    X = Conv2D(32, (3, 3), strides=(1, 1))(X)  # Conv.Layer(3)
+    X = Conv2D(32, (7, 3), strides=(2, 2))(X)  # Conv.Layer(3)
 
     X = Activation('relu')(X)
 
@@ -187,7 +187,6 @@ def defModel(input_shape):
     X = Dense(128, activation='relu')(X)  # F.C. layer(11)
 
     X = Dense(2, activation='softmax')(X)
-
     # ------------------------------------------------------------------------------
 
     model = Model(inputs=X_input, outputs=X, name='Model')

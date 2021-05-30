@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" type = "text/css" />
 
         <style>
             #imagen1{
@@ -369,9 +369,8 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Añada su imagen</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
-                <form id="contactForm" name="sentMessage" novalidate="novalidate">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-12">
                             <div class = "text-center">
@@ -384,19 +383,10 @@
                                         <button class = "btn btn-primary2" type="submit">Enviar</button>
             
                                     </form>
-            
-                                    </form>
                                 </div>
-                            </div>
-                           
-                        </div>
-                       
+                            </div> 
+                        </div> 
                     </div>
-                    <!-- <div class="text-center">
-                        <div id="success"></div>
-                        <button class="btn btn-primary2 btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
-                    </div> -->
-                </form>
             </div>
         </section>
 
@@ -686,13 +676,13 @@
         <div class="portfolio-modal modal fade" id="Eliminacion" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/eliminarRuido.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/eliminarRuido.png')}}" alt="" />
                                     <p style = "text-align: justify;">Una vez se tiene el tensor creado, se busca aquella imagen que contiene la mama más grande.
                                         Para ello, se analizan las imágenes en busca de las zonas con píxeles distintos de cero (que no sean de color negro), es decir, busca las zonas donde solo hay mama. 
                                         Una vez hecho eso, se le pide que analice el tensor en busca de los valores máximos y mínimos de X e Y dentro de los que están los píxeles que representan el pecho. Esos valores de X e Y marcarán el tamaño del tensor.
@@ -710,13 +700,13 @@
         <div class="portfolio-modal modal fade" id="Acondicionamiento" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/Capas1.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas1.png')}}" alt="" />
                                     <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
                                     </p>
                                 </div>
@@ -729,13 +719,13 @@
         <div class="portfolio-modal modal fade" id="ImagenGrande" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/capas2.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas2.png')}}" alt="" />
                                     <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
                                     </p>
                                 </div>
@@ -750,13 +740,13 @@
         <div class="portfolio-modal modal fade" id="Entrenamiento" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/acondicionamiento.png')}}" alt="" />
                                     <p style = "text-align: justify;">Una vez se tiene la red acondicionada al data set de las dos maneras, se procede a su entrenamiento para ver cuál de las dos funciona mejor. Además, se ha hecho un estudio de la evolución de dicho entrenamiento variando los siguientes parámetros:
                                     </p>
                                     <ul>
@@ -779,13 +769,13 @@
                 <div class="portfolio-modal modal fade" id="Resultados1" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                            <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="modal-body">
                                             <p class="item-intro text-muted"></p>
-                                            <img class="img-fluid d-block mx-auto" src="assets/img/Capas1.png" alt="" />
+                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas1.png')}}" alt="" />
                                             <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
                                             </p>
                                         </div>
@@ -798,13 +788,13 @@
                 <div class="portfolio-modal modal fade" id="Resultados2" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                            <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="modal-body">
                                             <p class="item-intro text-muted"></p>
-                                            <img class="img-fluid d-block mx-auto" src="assets/img/capas2.png" alt="" />
+                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas2.png')}}" alt="" />
                                             <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
                                             </p>
                                         </div>
@@ -820,9 +810,9 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
+        <script src="{{url_for('static', filename='js/jqBootstrapValidation.js')}}"></script>
+        <script src="{{url_for('static', filename='js/contact_me.js')}}"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
     </body>
 </html>

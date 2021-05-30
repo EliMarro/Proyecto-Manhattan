@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = path
 
 @app.route('/')
 def home():
-    return render_template('español.html')
+    return render_template('español-bueno.html')
 
 @app.route("/", methods = ['POST'])
 def uploader():
@@ -32,8 +32,8 @@ def uploader():
             copyfile(destino,servidor)
     import test
     x = test.predictImage()
-    B = x[0]
-    M = x[1]
+    B = round(x[0],2)
+    M = round(x[1],2)
     elementos =  os.listdir(path)
     for i in range(len(elementos)):
         if len(elementos) != 0 :
