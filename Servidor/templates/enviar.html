@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Documento</title>
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-ico" href="assets/img/Logi.svg"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type=text/javascript>
             $(function() {
               $('a#Prueba').bind('click', function() {
@@ -20,7 +21,7 @@
     <script>
         accuaracy = "{{accuaracy}}"
         function greets(){
-            alert("Su imagen esta siendo analizada, por favor espere.");
+            alert("Su imagen está siendo analizada, por favor espere.");
             }
         function doctor(){
             if (accuaracy>0.6){
@@ -30,17 +31,26 @@
             }
 
         }
-    </script> -->
+    </script>
+   <!-- Core theme CSS (includes Bootstrap)-->
+   <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <h2 aling = "center">Por favor si desea analizar su imagen pulse en el botón {{B}}, {{M}}</h2>
-    <form>
-        <a href=# id=Prueba><button onclick = greets() class='btn btn-default'>ANALizar</button></a>
-    </form>
-
-    <form>
-        <a href=# id=Prueba><button onclick = doctor() class='btn btn-default'>Resulta2</button></a>
-    </form>
-    <h1></h1>
+    <div class = "container2">
+        <div class="text-center">
+            <h7 aling = "center">Si desea analizar su imagen pulse en el siguiente botón</h7>
+            <br></br>
+            <form>
+                <a href=# id=Prueba><button onclick = greets() class="btn btn-outline-primary btn-lg">Analizar</button></a>
+            </form>
+            <br></br>
+            <h7 aling = "center">Si desea conocer nuestra recomendación pulse en el siguiente botón</h7>
+            <br></br>
+            <form>
+                <a href=# id=Prueba><button onclick = doctor() class="btn btn-outline-primary btn-lg">Resultados</button></a>
+            </form>
+            <h1></h1>
+        </div>
+    </div>
 </body>
 </html>

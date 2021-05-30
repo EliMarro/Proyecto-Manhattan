@@ -44,27 +44,5 @@ def uploader():
     os.remove("1-1.dcm")
     return render_template("enviar.html", B = B, M = M)
 
-# @app.route('/resultados')        
-# def resultados():
-#     import test
-#     x = test.predictImage()
-#     B = x[0]
-#     M = x[1]
-#     print(B)
-#     print(M)
-#     # f = predictImage.__dict__
-#     # print(f)
-
-#     os.remove("1-1.dcm")
-#     elementos =  os.listdir(path)
-#     for i in range(len(elementos)):
-#         if len(elementos) != 0 :
-#             #Codigo para cambiar las imagenes de carpeta
-#             origen = str(path + "//"+ elementos[i])
-#             destino = str(path2+"//"+elementos[i]) 
-#             shutil.move(origen,destino)
-#     return render_template("resultados.html",B = B, M = M)
-
-
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
