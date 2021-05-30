@@ -17,7 +17,6 @@ def home():
 
 @app.route("/", methods = ['POST'])
 def uploader():
-    #Esto se prepara para hacer cosas NAZIS que solo Diana comprende(Referencia clara a su pasado nacional socialista)
     #Se activa el modelo y se analiza
     if request.method == "POST":
         f = request.files.getlist("imagen")
@@ -31,7 +30,7 @@ def uploader():
             f[i].save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
             os.rename(origen,destino)
             copyfile(destino,servidor)
-        import test
+    import test
     x = test.predictImage()
     B = x[0]
     M = x[1]
