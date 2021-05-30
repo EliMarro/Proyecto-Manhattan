@@ -4,10 +4,11 @@ from tensorflow import python
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 import shutil
-import random
+from shutil import copyfile
 app = Flask(__name__)
 path = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor//ImagenesUsuarios"
 path2 = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor//ImagenesANALizadas"
+path3 = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor"
 app.config['UPLOAD_FOLDER'] = path
 
 @app.route('/')
@@ -25,31 +26,45 @@ def uploader():
             y = str(x)
             filename = secure_filename(y)
             origen = str(path+"//"+y)
-            destino = str(path+"//"+"1-2.dcm")
-            print(origen)
-            print(destino)
+            destino = str(path+"//"+"1-1.dcm")
+            servidor = str(path3+"//"+"1-1.dcm")
             f[i].save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
             os.rename(origen,destino)
-
-    return render_template("enviar.html")
-
-@app.route('/background_process_test')        
-def background_process_test():
-    resultado = random.random()
-    accuaracy = resultado
-    print(accuaracy)
+            copyfile(destino,servidor)
+        import test
+    x = test.predictImage()
+    B = x[0]
+    M = x[1]
     elementos =  os.listdir(path)
     for i in range(len(elementos)):
         if len(elementos) != 0 :
-            print("Hay imagenes que analizar")
-            #Aqui iria la parte de activar el modelo
-            print("LA IMAGEN"+elementos[i]+"SE VAN A ANALIZAR")
             #Codigo para cambiar las imagenes de carpeta
             origen = str(path + "//"+ elementos[i])
             destino = str(path2+"//"+elementos[i]) 
             shutil.move(origen,destino)
-    # os.system("python test.py")
-    return render_template("enviar.html", accuaracy = resultado)
+    os.remove("1-1.dcm")
+    return render_template("enviar.html", B = B, M = M)
+
+# @app.route('/resultados')        
+# def resultados():
+#     import test
+#     x = test.predictImage()
+#     B = x[0]
+#     M = x[1]
+#     print(B)
+#     print(M)
+#     # f = predictImage.__dict__
+#     # print(f)
+
+#     os.remove("1-1.dcm")
+#     elementos =  os.listdir(path)
+#     for i in range(len(elementos)):
+#         if len(elementos) != 0 :
+#             #Codigo para cambiar las imagenes de carpeta
+#             origen = str(path + "//"+ elementos[i])
+#             destino = str(path2+"//"+elementos[i]) 
+#             shutil.move(origen,destino)
+#     return render_template("resultados.html",B = B, M = M)
 
 
 if __name__ == '__main__':
