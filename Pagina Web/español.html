@@ -325,10 +325,20 @@
                     <h4>Resultados</h4>
                     <div class="row align-items-start">
                         <div class="col">
-                            <img class ="img-fluid" src="assets/img/acondicionamiento.png" alt=""></img>
+                            <a class="portfolio-link" data-toggle="modal" href="#Resultados1">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class ="img-fluid" src="assets/img/acondicionamiento.png" alt=""></img>
+                            </a>
                         </div>
                         <div class="col">
-                            <img class ="img-fluid" src="assets/img/acondicionamiento.png" alt=""></img>
+                            <a class="portfolio-link" data-toggle="modal" href="#Resultados2">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class ="img-fluid" src="assets/img/acondicionamiento.png" alt=""></img>
+                            </a>
                         </div>
                     
                 </div>
@@ -405,7 +415,7 @@
                                                 <p class = "text-justify">Ser capaces de leer archivos excel, acceder a columnas/ filas concretas y, a través de él poder acceder a las imágenes.</p>
                                             </li>
                                             <li>
-                                                <p class = "text-justify">Ser capaces de leer archivos .csv, acceder a columans/ filas concretas y transformar en 0 y 1 columnas que presentan únicamente dos parámetros (benigno-maligno).</p>
+                                                <p class = "text-justify">Ser capaces de leer archivos .csv, acceder a columnas/ filas concretas y transformar en 0 y 1 columnas que presentan únicamente dos parámetros (benigno-maligno).</p>
                                             </li>
                                         </ul>
                                     
@@ -762,6 +772,46 @@
                 </div>
             </div>
         </div>
+
+                <!-- Resultados-->
+                <div class="portfolio-modal modal fade" id="Resultados1" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="modal-body">
+                                            <p class="item-intro text-muted"></p>
+                                            <img class="img-fluid d-block mx-auto" src="assets/img/Capas1.png" alt="" />
+                                            <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-modal modal fade" id="Resultados2" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="modal-body">
+                                            <p class="item-intro text-muted"></p>
+                                            <img class="img-fluid d-block mx-auto" src="assets/img/capas2.png" alt="" />
+                                            <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
