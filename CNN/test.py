@@ -178,7 +178,7 @@ def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData
         row, columns = train.shape[1], train.shape[2]
         
 
-        img_path= r"1-1.dcm"
+        img_path= r"C:\Users\Álvaro\Desktop\Proyecto-Manhattan\Servidor\ImagenesUsuarios"
         ds= dcmread(img_path)
         arr= ds.pixel_array
         if np.all(arr[:,1913]==0):
@@ -203,52 +203,15 @@ def predictImage(img_path=get_testdata_file("1-1.dcm"), arrayImg=None, printData
     
 
     for i in range(len(a)):
-        if printData:
-            print("\n\nCrop " + str(i + 1) + " prediction:\n")
-
         ___, probs = predict(a[i], './modelo', showImg=False)
 
         for j in range(len(classes)):
             if printData:
-                print(str(classes[j]) + " : " + str(probs[j]) + "%")
+                print(str(classes[j]) + " : " + str(round(probs[j], 2)) + "%")
             compProbs[j] += probs[j]
 
-    if printData:
-        print("\n\nAverage from all crops\n")
 
-    for j in range(len(classes)):
-        if printData:
-            print(str(classes[j]) + " : " + str(compProbs[j]) + "%")
-
-
-
-print("1. Do you want to train the network\n"
-      "2. Test the model\n(Enter 1 or 2)?\n")
-ch = int(input())
-if ch == 1:
-    classes = np.load('classes.npy')
-    print("Loading")
-    X_train = np.load('X_train.npy')
-    X_train = tf.expand_dims(X_train, axis=-1)
-    print(X_train.shape)
-    Y_train = np.load('Y_train.npy')
-    Y_train = tf.keras.utils.to_categorical(Y_train, 2)
-    X_test = np.load('X_test.npy')
-    X_test = tf.expand_dims(X_test, axis=-1)
-    Y_test_orig = np.load('Y_test_orig.npy')
-    Y_test_orig = tf.keras.utils.to_categorical(Y_test_orig, 2)
-    print(X_train.shape)
-
-    print("number of training examples = " + str(X_train.shape[0]))
-    print("number of test examples = " + str(X_test.shape[0]))
-    print("X_train shape: " + str(X_train.shape))
-    print("Y_train shape: " + str(Y_train.shape))
-    print("X_test shape: " + str(X_test.shape))
-    print("Y_test shape: " + str(Y_test_orig.shape))
-    model = train(batch_size=batchSize, epochs=numOfEpoches)
-
-else:
-    predictImage()
+predictImage()
     
 
 
