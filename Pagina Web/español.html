@@ -266,14 +266,14 @@
                                 <!-- <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div> -->
-                                <img class="img-fluid" src="assets/img/acondicionamiento.png" alt="" />
+                                <img class="img-fluid" src="assets/img/Capas1.png" alt="" />
                             </a>
                             <br></br>
                             <a class="portfolio-link" data-toggle="modal" href="#ImagenGrande">
                                 <!-- <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div> -->
-                                <img class="img-fluid" src="assets/img/acondicionamiento.png" alt="" />
+                                <img class="img-fluid" src="assets/img/Capas2.png" alt="" />
                             </a>
                         </div>
                         <div class="timeline-panel">
@@ -288,15 +288,23 @@
 
                     <!-- Entrenamiento de la red -->
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" /></div>
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Entrenamiento">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" />
+                            </a>
+                        </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4 class = "text-center">Entrenamiento de la red</h4>
+                                <h4 class = "text-center">Entrenamiento</h4>
                             </div>
                             <div class="timeline-body">
                                 <p style ="text-align: justify;">Con la red ya reacondicionada al dataset escogido, se le aplican una serie de capas cuyo objetivo es el filtrado de datos.</p></div>
                         </div>
                     </li>
+
                     <!-- <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
@@ -309,7 +317,23 @@
                         </div>
                     </li> -->
                 </ul>
+                <br></br>
+                <br></br>
+
+                <!-- Resultados -->
+                <div class = "text-center">
+                    <h4>Resultados</h4>
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <img class ="img-fluid" src="assets/img/acondicionamiento.png" alt=""></img>
+                        </div>
+                        <div class="col">
+                            <img class ="img-fluid" src="assets/img/acondicionamiento.png" alt=""></img>
+                        </div>
+                    
+                </div>
             </div>
+
         </section>
         <!-- Clients
         <div class="py-5">
@@ -680,7 +704,7 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/Capas1.png" alt="" />
                                     <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
                                     </p>
                                 </div>
@@ -699,9 +723,38 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/capas2.png" alt="" />
                                     <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entrenamiento-->
+        <div class="portfolio-modal modal fade" id="Entrenamiento" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/acondicionamiento.png" alt="" />
+                                    <p style = "text-align: justify;">Una vez se tiene la red acondicionada al data set de las dos maneras, se procede a su entrenamiento para ver cuál de las dos funciona mejor. Además, se ha hecho un estudio de la evolución de dicho entrenamiento variando los siguientes parámetros:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <p style = "text-align: justify;">Número de epochs: número de veces que se ejecuta el algoritmo. En cada epoch todos los datos de entrenamiento pasan por la red neuronal para que esta aprenda de ellos.</p>
+                                        </li>
+                                        <li>
+                                            <p style = "text-align: justify;">Batch size: número de datos que tiene cada iteración de un ciclo (epoch). En función del batch size y del tamaño del set de entrenamiento, cada epoch tendrá más o menos iteraciones.</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
