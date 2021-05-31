@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 import shutil
 from shutil import copyfile
+from datetime import date, datetime
 app = Flask(__name__)
 path = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor//ImagenesUsuarios"
 path2 = "C://Users//Álvaro//Desktop//Proyecto-Manhattan//Servidor//ImagenesANALizadas"
@@ -37,9 +38,13 @@ def uploader():
     elementos =  os.listdir(path)
     for i in range(len(elementos)):
         if len(elementos) != 0 :
+            P = os.path.splitext(elementos[i])
+            print(P[0])
+            date_m = (datetime.now().strftime('%d-%m-%Y'))
+            m = str(date_m)
             #Codigo para cambiar las imagenes de carpeta
             origen = str(path + "//"+ elementos[i])
-            destino = str(path2+"//"+elementos[i]) 
+            destino = str(path2+"//"+ m +"-"+P[0]+".dcm") 
             shutil.move(origen,destino)
     os.remove("1-1.dcm")
     return render_template("enviar.html", B = B, M = M)
