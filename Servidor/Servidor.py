@@ -16,9 +16,8 @@ app.config['UPLOAD_FOLDER'] = path
 def home():
     return render_template('español.html')
 
-@app.route("/", methods = ['POST'])
+@app.route("/upload", methods = ['POST'])
 def uploader():
-    #Se activa el modelo y se analiza
     if request.method == "POST":
         f = request.files.getlist("imagen")
         for i in range(len(f)):
@@ -40,7 +39,7 @@ def uploader():
         if len(elementos) != 0 :
             P = os.path.splitext(elementos[i])
             print(P[0])
-            date_m = (datetime.now().strftime('%d-%m-%Y'))
+            date_m = (datetime.now().strftime('%H-%M-%S'))
             m = str(date_m)
             #Codigo para cambiar las imagenes de carpeta
             origen = str(path + "//"+ elementos[i])
