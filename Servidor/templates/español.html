@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proyecto Manhattan</title>
+        <link rel="icon" type="image/x-ico" href="{{url_for('static', filename='img/Logi.svg')}}">
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" type = "text/css" />
+
+        <style>
+            #imagen1{
+                float: left;
+            }
+            #imagen2{
+                float: right;
+            }
+        </style>
+
+
+    </head>
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="{{url_for('static', filename='img/Logobtn.svg')}}" alt="" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#desarrollocancer">Desarrollo del cáncer</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#conceptoderedes">Usos de redes neuronales</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#red">Funcionamiento de la red</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Imagenes">Añada su imagen</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Aprendizaje">Aprendizaje</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#equipo">Equipo</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Idioma
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="español.html">Español</a>
+                              <a class="dropdown-item" href="english.html">Inglés</a>
+                            </div>
+                          </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>
+        
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading"></div>
+                <div class="masthead-heading text-uppercase">Proyecto Manhattan</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#desarrollocancer" src = "{{url_for('static', filename='img/Logobtn.svg')}}"></a>
+                <br></br>
+                <p class = "text-center">Proyecto Manhattan nace como un trabajo final para la asignatura de "Programación gráfica en Python y Java", donde se han juntado el interés por la Ingeniería Biomédica y la Inteligencia Artificial.</p>
+            </div>
+
+            
+
+            
+        </header>
+
+        <!-- Services -->
+        <section class="page-section" id="desarrollocancer">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Desarrollo del cáncer</h2>
+                    <p style ="text-align: justify;">Explicado de manera muy básica, en una situación normal, las células se dividen de forma ordenada, mueren cuando se desgastan y nuevas células nacen en su lugar. En cambio, en pacientes enfermos con cáncer se observa una división descontrolada y desordenada de las células.
+                        Este proceso de división descontrolada puede comenzar de manera localizada y después diseminarse a otros tejidos circundantes o incluso expandirse a otros órganos del cuerpo en un proceso que se conoce como metástasis.</p>
+                    <p style ="text-align: justify;">Los cánceres más comunes son: de piel, de pulmón, de mama y colorrectal. En concreto, nosotros hemos decidido trabajar con el cáncer de mama porque</p>
+                        <h3 class="section-heading">Etapas del cáncer de mama</h3>
+                    <p style ="text-align: justify;">La elección del mejor tratamiento dependerá del estadio en el que se encuentre el cáncer. Este puede ser determinado en función del tamaño del tumor, su naturaleza invasiva, y el grado de diseminación a nodos linfáticos u otras partes del cuerpo.</p>
+                    <p style ="text-align: justify;">Se pueden distinguir cinco etapas:</p>
+                    <div class="col-md-12">
+                        <div class = "row">
+                            <div class="col-lg-12">
+                                <div class="team-member">
+                                    <h3 class="section-heading">Estadio 0</h3>
+                                    <p style ="text-align: justify;">Afección por la que se encuentran células anormales en el revestimiento de un conducto de la mama. Estas células anormales no se diseminaron fuera del conducto a otros tejidos de la mama.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br></br>
+
+                        <div class = "row">
+                            <div class="col-lg-12">
+                                <div class="team-member">
+                                    <img class="mx-auto rounded-circle" id = "imagen2" src="{{url_for('static', filename='img/T1.svg.png')}}" alt="" />
+                                    <h3 class="section-heading">Estadio 1</h3>
+                                    <p style ="text-align: justify;">Las células cancerígenas ya han superado la membrana basal, pero el tumor no supera los 2 cm de tamaño.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br></br>
+
+                        <div class = "row">
+                            <div class="col-lg-12">
+                                <div class="team-member">
+                                    <img class="mx-auto rounded-circle" id = "imagen1" src="{{url_for('static', filename='img/T2.svg.png')}}" alt="" />
+                                    <h3 class="section-heading">Estadio 2</h3>
+                                    <p style ="text-align: justify;">Semejante al estadio 1, pero el tumor ha superado los 2 cm, aunque tampoco ha alcanzado los 5 cm. No se ha diseminado todavía a los ganglios linfáticos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br></br>
+
+                        <div class = "row">
+                            <div class="col-lg-12">
+                                <div class="team-member">
+                                    <img class="mx-auto rounded-circle" id = "imagen2" src="{{url_for('static', filename='img/T3.svg.png')}}" alt="" />
+                                    <h3 class="section-heading">Estadio 3</h3>
+                                    <p style ="text-align: justify;">Dentro de este estadio se tienen distintos clasificaciones en función del tamaño de la masa tumoral y de si los nódulos linfáticos están afectados o no.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br></br>
+
+                        <div class = "row">
+                            <div class="col-lg-12">
+                                <div class="team-member">
+                                    <img class="mx-auto rounded-circle" id = "imagen1" src="{{url_for('static', filename='img/T4.jpg')}}" alt="" />
+                                    <h3 class="section-heading">Estadio 4</h3>
+                                    <p style ="text-align: justify;">Cáncer en etapa 'avanzada' y/o cáncer metastásico. El cáncer se diseminó hasta otros órganos del cuerpo. Metastatiza con mayor frecuencia en los huesos, los pulmones, el hígado o el cerebro y tiene un mal pronóstico.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br></br>
+                        <h3 class = "section-heading">Detección del cáncer de mama</h3>
+                        <p style ="text-align: justify;">Para detectar un cáncer de mama se utilizan varias pruebas: examen físico, mamografías, ecografías o imágenes por resonancia magnética. Pero el diagnóstico definitivo se debe realizar con una biopsia mamaria. 
+                            Aún así, una detección temprana en una mamografía, cuando el cancer aún está en fases menos avanzadas, puede suponer una gran diferencia para el paciente. </p>
+                        <p style ="text-align: justify;">Por eso creemos que el tratamiento de imágenes de mamografías y el entrenamiento de una inteligecia artificial para detectar anomalías en dichas imágenes son de gran importancia en la detección temprana del cáncer de mama.</p>
+                </div>
+        </section>
+
+
+
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="conceptoderedes">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Usos de redes neuronales</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <h3 class="text-center">Reconocimiento numérico</h3>
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="img-fluid" src="{{url_for('static', filename='img/Numeros.png')}}" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading"></div>
+                                <div class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <h3 class="text-center">Conducción autonoma</h3>
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="img-fluid" src="{{url_for('static', filename='img/ElonMusk.jpg')}}" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading"></div>
+                                <div class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <h3 class="text-center">Detección de tumores mamarios</h3>
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="img-fluid" src="{{url_for('static', filename='img/41598_2018_22437_Fig1_HTML.jpg')}}" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading"></div>
+                                <div class="portfolio-caption-subheading text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section" id="red">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Funcionamiento de la red</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <ul class="timeline">
+                    
+                    <!-- Preprocesamiento de imágenes -->
+                    <li>
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Preprocesamiento">
+                                <img class="img-fluid" src="{{url_for('static', filename='img/mama1.png')}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class = "text-center">Preprocesamiento de imágenes</h4>
+                                <!-- <h4 class="subheading">Our Humble Beginnings</h4> -->
+                            </div>
+                            <div class="timeline-body">
+                                <p style ="text-align: justify;">Se leen las imágenes desde un archivo .dcm y se convierten en matrices (archivo .npy). Una vez hecho esto, se crea un tensor de tamaño "número de pacientes x ancho x alto de la imagen".</p></p>
+                                <p class="text-center"></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Eliminación de ruido -->
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Eliminacion">
+                                <img class="img-fluid" src="{{url_for('static', filename='img/mama2.png')}}" width="70" height="100" alt="" />
+                            </a>
+                        </div>
+
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class = "text-center">Eliminación de ruido</h4>
+                                <!-- <h4 class="subheading">An Agency is Born</h4> -->
+                            </div>
+                            <div class="timeline-body">
+                                <p style ="text-align: justify;">Como la mama no ocupa todo el espacio en la imagen al completo, se le ha aplicado un corte al tensor para eliminar la parte que no interesa. De esta manera se optimiza el funcionamiento de la red.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Acondicionamiento de la red -->
+                    <li>
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Acondicionamiento">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="img-fluid" src="{{url_for('static', filename='img/Capas1.png')}}" alt="" />
+                            </a>
+                            <br></br>
+                            <a class="portfolio-link" data-toggle="modal" href="#ImagenGrande">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="img-fluid" src="{{url_for('static', filename='img/Capas2.png')}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class = "text-center">Acondicionamiento de la red</h4>
+                                <!-- <h4 class="subheading">Transition to Full Service</h4> -->
+                            </div>
+                            <div class="timeline-body">
+                                <p style ="text-align: justify;">Con las imágenes procesadas y recortadas, se ha acondicionado el data set para tener una densidad inicial similar a 512 x 512 (tamaño de las imágenes utilizadas para entrenar la red original) y poder aplicar con éxito las capas ya diseñadas.</p></div>
+                        </div>
+                    </li>
+
+                    <!-- Entrenamiento de la red -->
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <a class="portfolio-link" data-toggle="modal" href="#Entrenamiento">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class = "text-center">Entrenamiento</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p style ="text-align: justify;">Con la red ya reacondicionada al dataset escogido, se le aplican una serie de capas cuyo objetivo es el filtrado de datos.</p></div>
+                        </div>
+                    </li>
+
+                    <!-- <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Story!
+                            </h4>
+                        </div>
+                    </li> -->
+                </ul>
+                <br></br>
+                <br></br>
+
+                <!-- Resultados -->
+                <div class = "text-center">
+                    <h4>Resultados</h4>
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <a class="portfolio-link" data-toggle="modal" href="#Resultados1">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class ="img-fluid" src="{{url_for('static', filename='img/acondicionamiento.png')}}" alt=""></img>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="portfolio-link" data-toggle="modal" href="#Resultados2">
+                                <!-- <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div> -->
+                                <img class ="img-fluid" src="{{url_for('static', filename='img/acondicionamiento.png')}}" alt=""></img>
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+
+        </section>
+        <!-- Clients
+        <div class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/envato.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/designmodo.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/themeforest.jpg" alt="" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid d-block mx-auto" src="assets/img/logos/creative-market.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Contact-->
+        <section class="page-section" id="Imagenes">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Añada su imagen</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-12">
+                            <div class = "text-center">
+                                <div class="form-group">
+                                    <form  method="POST" enctype="multipart/form-data">
+
+                                        <input type="file" class="custom-file-input" id="customFileLang" lang="es" name= "imagen" multiple accept=".dcm">
+                                            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                        <br></br>
+                                        <button class = "btn btn-primary2" type="submit">Enviar</button>
+            
+                                    </form>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>
+            </div>
+        </section>
+
+        <!--Aprendizaje-->
+        <section class="page-section bg-light" id="Aprendizaje">
+            <div class="container">
+                <h2 class="text-center">¿Qué hemos aprendido?</h2>
+                <div class="caja">
+                    <ul>
+                        <li>
+                            <h3 class = "text-justify">En el back end:</h3>
+                                <ul>
+                                    <li>
+                                        <p class = "text-justify">Lectura de archivos:</p>
+                                    </li>
+                                        <ul>
+                                            <li>
+                                                <p class = "text-justify">Ser capaces de leer archivos excel, acceder a columnas/ filas concretas y, a través de él poder acceder a las imágenes.</p>
+                                            </li>
+                                            <li>
+                                                <p class = "text-justify">Ser capaces de leer archivos .csv, acceder a columnas/ filas concretas y transformar en 0 y 1 columnas que presentan únicamente dos parámetros (benigno-maligno).</p>
+                                            </li>
+                                        </ul>
+                                    
+                                    <li>
+                                        <p class = "text-justify">Módulo de numpy:</p>
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <p class = "text-justify"></p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify"></p>
+                                        </li>
+                                    </ul>
+                                    <li>
+                                        <p class = "text-justify">Tratamiento de un dataset de imágenes:</p>
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <p class = "text-justify">Conversión de imágenes a matrices de números.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Rotar imágenes.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Concatenar varias matrices en un tensor.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Recortar tensores para quedarnos solo con la parte de la imagen que nos interesa.</p>
+                                        </li>
+                                    </ul>
+                                </ul>
+                        </li>
+                        <li>
+                            <h3 class = "text-justify">En el front end:</h3>
+                                <ul>
+                                    <li>
+                                        <p class = "text-justify">Modificar un template usando .html y .css.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Crear un servidor.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Conexión entre cliente y servidor.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Apertura de puertos wifi.</p>
+                                    </li>
+                                </ul> 
+                        </li>
+                      </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="page-section bg-light" id="Aprendizaje">
+            <div class="container">
+                <h2 class="text-center">Dificultades encontradas durante el desarrollo del proyecto</h2>
+                <div class="caja">
+                    <ul>
+                        <li>
+                            <h3 class = "text-justify">En el back end:</h3>
+                                <ul>
+                                    <li>
+                                        <p class = "text-justify">El dataset:</p>
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <p class = "text-justify">Encontrar un dataset que proporcionara imágenes y una clasificación de éstas.</p>
+                                        </li>
+                                        <li>
+                                            <p class = "text-justify">Recorte de las imágenes para eliminación de ruido: no todas las imágenes eran del mismo tamaño y muchas de ellas estaban giradas, hubo que acondicionar primero todas las imágenes para juntarlas en un único tensor que se pudiera recortar.</p>
+                                        </li>
+                                    </ul>
+                                    <li>
+                                        <p class = "text-justify">Problemas de memoria: la mayor dificultad. Nos ha limitado bastante la falta de un equipo con memoria y capacidad suficiente como para poder preprocesar más de 5000 imágenes de unos 4 MB cada una y poder entrenar la red para reconocer anomalías.</p>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li>
+                            <h3 class = "text-justify">En el front end:</h3>
+                                <ul>
+                                    <li>
+                                        <p class = "text-justify">Elección de la librería para el desarrollo del servidor.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Conexión entre cliente y servidor.</p>
+                                    </li>
+                                    <li>
+                                        <p class = "text-justify">Incapacidad para abrir los puertos wifi.</p>
+                                    </li>
+                                </ul> 
+                        </li>
+                      </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Team-->
+        <section class="page-section bg-light" id="equipo">
+            <div class="container">
+                <div class="text-center">
+                        <h2 class="section-heading text-uppercase">Equipo técnico</h2>
+                        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="{{url_for('static', filename='img/team/Diana.jpg')}}" alt="" />
+                                <h4>Diana Teodora Stegeran</h4>
+                                <p class="text-muted">Desarrollo de la red</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="{{url_for('static', filename='img/team/Elisacopia.jpg')}}" alt="" />
+                                <h4>Elisa Sánchez Marrodán</h4>
+                                <p class="text-muted">Red y desarrollo de la página web</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="{{url_for('static', filename='img/team/Iñaki.jpg')}}" alt="" />
+                                <h4>Iñaki Corrillero Barroso</h4>
+                                <p class="text-muted">Red y análisis de resultados</p>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="{{url_for('static', filename='img/team/Alvarocopia.jpg')}}" alt="" />
+                                <h4>Álvaro Oviedo Díaz</h4>
+                                    <p class="text-muted">Página web y desarrollo del servidor</p>
+                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    </div>
+                </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">Copyright © Proyecto Manhattan 2021</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-right">
+                        <a class="mr-3" href="#!">Privacy Policy</a>
+                        <a href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Reconocimiento numérico</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Numeros.png')}}" alt="" />
+                                    <p>Las redes Neuronales de convolución comenzaron su andadura en el siglo pasado para poder leer números hechos a mano de cara a resolver examenes de forma automática</p>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Conducción Autonoma</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/ElonMusk.jpg')}}" alt="" />
+                                    <p>Tesla, la empresa del excéntrico empresario Elon Musk, basa su sistema de conducción autónoma en las redes neuronales de convolución</p>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">Detección de Tumores mamarios</h2>
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/41598_2018_22437_Fig1_HTML.jpg')}}" alt="" />
+                                    <p>Las redes neuronales convolucionales tambien se pueden usar para el reconocimiento de tumores en mamografias que sirvan de ayuda a los medicos de cara a poder detectarlos</p>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preprocesamiento -->
+        <div class="portfolio-modal modal fade" id="Preprocesamiento" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/preprocesamiento.png')}}" alt="" />
+                                    <p style = "text-align: justify;">En el data-set venía incluido un excel donde se especifica la ruta de la imagen hasta la carpeta donde se encuentra. Para leer las imágenes, se va leyendo la columna del excel donde viene dicha ruta,
+                                        y se le pide que coja una sola imagen (cada paciente tiene 2 o 4 imágenes, pero solo necesitamos 1). Esa imagen es analizada para ver de que lado está la mama, y rotarla si el pecho se encuentra a la izquierda. De esta manera,
+                                        todas las imágenes tendrán la imagen del pecho en el mismo lado, y será más fácil manipularlas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elimnacion de ruido -->
+        <div class="portfolio-modal modal fade" id="Eliminacion" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/eliminarRuido.png')}}" alt="" />
+                                    <p style = "text-align: justify;">Una vez se tiene el tensor creado, se busca aquella imagen que contiene la mama más grande.
+                                        Para ello, se analizan las imágenes en busca de las zonas con píxeles distintos de cero (que no sean de color negro), es decir, busca las zonas donde solo hay mama. 
+                                        Una vez hecho eso, se le pide que analice el tensor en busca de los valores máximos y mínimos de X e Y dentro de los que están los píxeles que representan el pecho. Esos valores de X e Y marcarán el tamaño del tensor.
+                                        De esta manera se elimina parte de la zona oscura de las imágenes, que para el entrenamiento de la red solo representa un obstáculo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acondicionamiento de la red-->
+        <div class="portfolio-modal modal fade" id="Acondicionamiento" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas1.png')}}" alt="" />
+                                    <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="ImagenGrande" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas2.png')}}" alt="" />
+                                    <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entrenamiento-->
+        <div class="portfolio-modal modal fade" id="Entrenamiento" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <p class="item-intro text-muted"></p>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/acondicionamiento.png')}}" alt="" />
+                                    <p style = "text-align: justify;">Una vez se tiene la red acondicionada al data set de las dos maneras, se procede a su entrenamiento para ver cuál de las dos funciona mejor. Además, se ha hecho un estudio de la evolución de dicho entrenamiento variando los siguientes parámetros:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <p style = "text-align: justify;">Número de epochs: número de veces que se ejecuta el algoritmo. En cada epoch todos los datos de entrenamiento pasan por la red neuronal para que esta aprenda de ellos.</p>
+                                        </li>
+                                        <li>
+                                            <p style = "text-align: justify;">Batch size: número de datos que tiene cada iteración de un ciclo (epoch). En función del batch size y del tamaño del set de entrenamiento, cada epoch tendrá más o menos iteraciones.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Resultados-->
+                <div class="portfolio-modal modal fade" id="Resultados1" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="modal-body">
+                                            <p class="item-intro text-muted"></p>
+                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas1.png')}}" alt="" />
+                                            <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-modal modal fade" id="Resultados2" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="close-modal" data-dismiss="modal"><img src="{{url_for('static', filename='img/close-icon.svg')}}" alt="Close modal" /></div>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="modal-body">
+                                            <p class="item-intro text-muted"></p>
+                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas2.png')}}" alt="" />
+                                            <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="{{url_for('static', filename='js/jqBootstrapValidation.js')}}"></script>
+        <script src="{{url_for('static', filename='js/contact_me.js')}}"></script>
+        <!-- Core theme JS-->
+        <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+    </body>
+</html>

@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = path
 
 @app.route('/')
 def home():
-    return render_template('español-bueno.html')
+    return render_template('español.html')
 
 @app.route("/", methods = ['POST'])
 def uploader():
