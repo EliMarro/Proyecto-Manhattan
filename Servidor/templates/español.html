@@ -45,15 +45,6 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Imagenes">Añada su imagen</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Aprendizaje">Aprendizaje</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#equipo">Equipo</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Idioma
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="español.html">Español</a>
-                              <a class="dropdown-item" href="english.html">Inglés</a>
-                            </div>
-                          </li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +56,7 @@
             <div class="container">
                 <div class="masthead-subheading"></div>
                 <div class="masthead-heading text-uppercase">Proyecto Manhattan</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#desarrollocancer" src = "{{url_for('static', filename='img/Logobtn.svg')}}"></a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#desarrollocancer" src = "{{url_for('static', filename='img/Logobtn.svg')}}">PM</a>
                 <br></br>
                 <p class = "text-center">Proyecto Manhattan nace como un trabajo final para la asignatura de "Programación gráfica en Python y Java", donde se han juntado el interés por la Ingeniería Biomédica y la Inteligencia Artificial.</p>
             </div>
@@ -568,7 +559,8 @@
                                     <h2 class="text-uppercase">Reconocimiento numérico</h2>
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Numeros.png')}}" alt="" />
-                                    <p>Las redes Neuronales de convolución comenzaron su andadura en el siglo pasado para poder leer números hechos a mano de cara a resolver examenes de forma automática</p>                      
+                                    <p>Las redes Neuronales de convolución comenzaron su andadura en el siglo pasado para poder leer números hechos a mano de cara a resolver examenes de forma automática</p>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
                                     </button>
                                 </div>
                             </div>
@@ -591,6 +583,7 @@
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/ElonMusk.jpg')}}" alt="" />
                                     <p>Tesla, la empresa del excéntrico empresario Elon Musk, basa su sistema de conducción autónoma en las redes neuronales de convolución</p>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
                                     </button>
                                 </div>
                             </div>
@@ -613,6 +606,7 @@
                                     <p class="item-intro text-muted"></p>
                                     <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/41598_2018_22437_Fig1_HTML.jpg')}}" alt="" />
                                     <p>Las redes neuronales convolucionales tambien se pueden usar para el reconocimiento de tumores en mamografias que sirvan de ayuda a los medicos de cara a poder detectarlos</p>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
                                     </button>
                                 </div>
                             </div>
