@@ -73,7 +73,7 @@
                     <h2 class="section-heading text-uppercase">Desarrollo del cáncer</h2>
                     <p style ="text-align: justify;">Explicado de manera muy básica, en una situación normal, las células se dividen de forma ordenada, mueren cuando se desgastan y nuevas células nacen en su lugar. En cambio, en pacientes enfermos con cáncer se observa una división descontrolada y desordenada de las células.
                         Este proceso de división descontrolada puede comenzar de manera localizada y después diseminarse a otros tejidos circundantes o incluso expandirse a otros órganos del cuerpo en un proceso que se conoce como metástasis.</p>
-                    <p style ="text-align: justify;">Los cánceres más comunes son: de piel, de pulmón, de mama y colorrectal. En concreto, nosotros hemos decidido trabajar con el cáncer de mama porque</p>
+                    <p style ="text-align: justify;">Los cánceres más comunes son: de piel, de pulmón, de mama y colorrectal. En concreto, se ha elegido el cáncer de mama por ser este el más frecuente en al mujer española, siendo una de cada ocho las que lo sufren. Además, esta sigue siendo la primera causa de muerte por cáncer en España en las mujeres.</p>
                         <h3 class="section-heading">Etapas del cáncer de mama</h3>
                     <p style ="text-align: justify;">La elección del mejor tratamiento dependerá del estadio en el que se encuentre el cáncer. Este puede ser determinado en función del tamaño del tumor, su naturaleza invasiva, y el grado de diseminación a nodos linfáticos u otras partes del cuerpo.</p>
                     <p style ="text-align: justify;">Se pueden distinguir cinco etapas:</p>
@@ -137,8 +137,8 @@
 
                         <br></br>
                         <h3 class = "section-heading">Detección del cáncer de mama</h3>
-                        <p style ="text-align: justify;">Para detectar un cáncer de mama se utilizan varias pruebas: examen físico, mamografías, ecografías o imágenes por resonancia magnética. Pero el diagnóstico definitivo se debe realizar con una biopsia mamaria. 
-                            Aún así, una detección temprana en una mamografía, cuando el cancer aún está en fases menos avanzadas, puede suponer una gran diferencia para el paciente. </p>
+                        <p style ="text-align: justify;">Para detectar un cáncer de mama se utilizan varias pruebas: examen físico, mamografías, ecografías o imágenes por resonancia magnética. Pero el diagnóstico definitivo se debe realizar con una biopsia mamaria. Es importante destacar que el estadio en el que se ha diagnosticado el cáncer influye notablemente en la supervivencia. En el estadio I, la supervivencia es de más del 98% y en cambio en los estadios IV la supervivencia desciende al 24%.
+                            De esta manera, una detección temprana en una mamografía, cuando el cancer aún está en fases menos avanzadas, puede suponer una gran diferencia para el paciente. </p>
                         <p style ="text-align: justify;">Por eso creemos que el tratamiento de imágenes de mamografías y el entrenamiento de una inteligecia artificial para detectar anomalías en dichas imágenes son de gran importancia en la detección temprana del cáncer de mama.</p>
                 </div>
         </section>
@@ -284,7 +284,7 @@
                                 <!-- <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div> -->
-                                <img class="rounded-circle img-fluid" src="{{url_for('static', filename='img/about/4.jpg')}}" alt="" />
+                                <img class="img-fluid" src="{{url_for('static', filename='img/algunascapas.png')}}" alt="" />
                             </a>
                         </div>
                         <div class="timeline-panel">
@@ -314,11 +314,23 @@
                 <!-- Resultados -->
                 <div class = "text-center">
                     <h4 class="section-heading text-uppercase">Resultados</h4>
+                    <p style ="text-align: justify;">Para el análisis de resultados se ha realizado un estudio de la evolución del entrenamiento de la red variando los siguientes parámetros:</p>
+                    <ul>
+                        <li>
+                            <p style = "text-align: justify;">Número de epochs: número de veces que se ejecuta el algoritmo. En cada epoch todos los datos de entrenamiento pasan por la red neuronal para que esta aprenda de ellos.</p>
+                        </li>
+                        <li>
+                            <p style = "text-align: justify;">Batch size: número de datos que tiene cada iteración de un ciclo (epoch). En función del batch size y del tamaño del set de entrenamiento, cada epoch tendrá más o menos iteraciones.</p>
+                        </li>
+                    </ul>
+                    <p style ="text-align: justify;">Primero se ha fijado el número de epochs en 10, y se ha runeado varias veces el código para unos batch size entre 15 y 32, y así comprobar cuál de ellos se mantiene más estable. De este análisis se concluye que los que más y menos variación presentan entre máximo y mínimo (para ambas opciones) son los batch size de 15 y 20 respectivamente.</p>
+                    <p style ="text-align: justify;">Una vez hecho esto y dado que el más estable parece ser el de batch size=20, se ha fijado ese valor, y se ha ido variando el número de epochs para ver la evolución de la curva.</p>
+                    <p style ="text-align: justify;">Los resultados obtenidos pueden observarse en las imágenes de abajo.</p>
                     <div class="row align-items-start">
                         <div class="col">
                             <h5>Añadiendo capas de tensor flow</h5>
                             <a class="portfolio-link" data-toggle="modal" href="#Resultados1">
-                                <img class ="img-fluid" src="{{url_for('static', filename='img/graficametodo2.png')}}" alt=""></img>
+                                <img class ="img-fluid" src="{{url_for('static', filename='img/graficametodo1.png')}}" alt=""></img>
                             </a>
                         </div>
                         <div class="col">
@@ -327,6 +339,7 @@
                                 <img class ="img-fluid" src="{{url_for('static', filename='img/graficametodo2.png')}}" alt=""></img>
                             </a>
                         </div>     
+                    </div>
                 </div>
             </div>
 
@@ -399,14 +412,6 @@
                                     <li>
                                         <p class = "text-justify">Módulo de numpy:</p>
                                     </li>
-                                    <ul>
-                                        <li>
-                                            <p class = "text-justify"></p>
-                                        </li>
-                                        <li>
-                                            <p class = "text-justify"></p>
-                                        </li>
-                                    </ul>
                                     <li>
                                         <p class = "text-justify">Tratamiento de un dataset de imágenes:</p>
                                     </li>
@@ -421,7 +426,7 @@
                                             <p class = "text-justify">Concatenar varias matrices en un tensor.</p>
                                         </li>
                                         <li>
-                                            <p class = "text-justify">Recortar tensores para quedarnos solo con la parte de la imagen que nos interesa.</p>
+                                            <p class = "text-justify">Recortar tensores para dejar solo la parte de la imagen que interesa.</p>
                                         </li>
                                     </ul>
                                 </ul>
@@ -468,6 +473,15 @@
                                             <p class = "text-justify">Recorte de las imágenes para eliminación de ruido: no todas las imágenes eran del mismo tamaño y muchas de ellas estaban giradas, hubo que acondicionar primero todas las imágenes para juntarlas en un único tensor que se pudiera recortar.</p>
                                         </li>
                                     </ul>
+
+                                    <li>
+                                        <p class = "text-justify">La red:</p>
+                                    </li>
+                                    <ul>
+                                        <li>
+                                            <p class = "text-justify">Encontrar una red que se pudiera adecuar al dataset escogido.</p>
+                                        </li>
+                                    </ul>
                                     <li>
                                         <p class = "text-justify">Problemas de memoria: la mayor dificultad. Nos ha limitado bastante la falta de un equipo con memoria y capacidad suficiente como para poder preprocesar más de 5000 imágenes de unos 4 MB cada una y poder entrenar la red para reconocer anomalías.</p>
                                     </li>
@@ -478,9 +492,6 @@
                                 <ul>
                                     <li>
                                         <p class = "text-justify">Elección del framework para el desarrollo del servidor.</p>
-                                    </li>
-                                    <li>
-                                        <p class = "text-justify">Conexión entre cliente y servidor.</p>
                                     </li>
                                     <li>
                                         <p class = "text-justify">Incapacidad para abrir los puertos wifi.</p>
@@ -518,7 +529,7 @@
                             <div class="team-member">
                                 <img class="mx-auto rounded-circle" src="{{url_for('static', filename='img/team/Iñaki.jpg')}}" alt="" />
                                 <h4>Iñaki Corrillero Barroso</h4>
-                                <p class="text-muted">Red y análisis de resultados</p>
+                                <p class="text-muted">Análisis de resultados</p>
                             </div>
                         </div>
                         <div class="col-lg-3">
@@ -705,17 +716,7 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <p class="item-intro text-muted"></p>
-                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/acondicionamiento.png')}}" alt="" />
-                                    <p style = "text-align: justify;">Una vez se tiene la red acondicionada al data set de las dos maneras, se procede a su entrenamiento para ver cuál de las dos funciona mejor. Además, se ha hecho un estudio de la evolución de dicho entrenamiento variando los siguientes parámetros:
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <p style = "text-align: justify;">Número de epochs: número de veces que se ejecuta el algoritmo. En cada epoch todos los datos de entrenamiento pasan por la red neuronal para que esta aprenda de ellos.</p>
-                                        </li>
-                                        <li>
-                                            <p style = "text-align: justify;">Batch size: número de datos que tiene cada iteración de un ciclo (epoch). En función del batch size y del tamaño del set de entrenamiento, cada epoch tendrá más o menos iteraciones.</p>
-                                        </li>
-                                    </ul>
+                                    <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/capas.png')}}" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -734,9 +735,8 @@
                                     <div class="col-lg-8">
                                         <div class="modal-body">
                                             <p class="item-intro text-muted"></p>
-                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas1.png')}}" alt="" />
-                                            <p style = "text-align: justify;">Una de las maneras de hacer esto consiste en la aplicación de una serie de capas iniciales hasta conseguir una densidad similar a la buscada de 512x 512. 
-                                            </p>
+                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/resultado1.png')}}" alt="" />
+                                            <p style = "text-align: justify;"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -753,9 +753,8 @@
                                     <div class="col-lg-8">
                                         <div class="modal-body">
                                             <p class="item-intro text-muted"></p>
-                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/Capas2.png')}}" alt="" />
-                                            <p style = "text-align: justify;">La otra manera de operar para conseguir esto consiste en programar una alternativa a las capas de tensor flow, ya que estas últimas suponen la utilización de demasiada memoria.
-                                            </p>
+                                            <img class="img-fluid d-block mx-auto" src="{{url_for('static', filename='img/resultado2.png')}}" alt="" />
+                                            <p style = "text-align: justify;"></p>
                                         </div>
                                     </div>
                                 </div>
